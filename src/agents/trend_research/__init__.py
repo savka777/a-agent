@@ -1,5 +1,3 @@
-from .trend_researcher import run_trend_researcher
+from .trend_researcher import TrendResearchAgent
 
-__all__ = [
-    run_trend_researcher
-]
+__all__ = ["TrendResearchAgent"]
