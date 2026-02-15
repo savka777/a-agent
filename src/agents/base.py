@@ -6,7 +6,6 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import SystemMessage, HumanMessage, BaseMessage
 from config.settings import get_model_id
 
-
 # -----------------------------------------------------------------------------
 # Logger Setup
 #
@@ -209,7 +208,8 @@ class Agent:
         # call the LLM
         logger.debug(f"[{self.name}] calling LLM...")
         response = await self.llm.ainvoke(messages)
-        logger.debug(f"[{self.name}] LLM response received")
+        logger.info(f"[{self.name}] LLM response type: {type(response)}")
+        logger.info(f"[{self.name}] LLM response attrs: {[a for a in dir(response) if not a.startswith('_')]}")
 
         # build the new message list
         if is_first_call:
@@ -227,7 +227,10 @@ class Agent:
 
         # get content (might be empty string if tool call)
         # use helper to extract text from structured content blocks
+        logger.info(f"[{self.name}] raw response.content type: {type(response.content)}")
+        logger.info(f"[{self.name}] raw response.content: {repr(response.content)[:500]}")
         content = extract_text_content(response.content)
+        logger.info(f"[{self.name}] extracted content length: {len(content)}")
 
         if not has_tool_calls:
             # truncate content for logging
@@ -282,6 +285,7 @@ class Agent:
 
         logger.debug(f"[{self.name}] calling LLM...")
         response = await self.llm.ainvoke(messages)
+
 
         has_tool_calls = False
         if hasattr(response, "tool_calls") and response.tool_calls:

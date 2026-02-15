@@ -1,0 +1,251 @@
+{
+  "mode": "general",
+  "niche": "Productivity & Utilities, Health & Fitness, Social & Dating, Casual Games, Education, Music & Audio",
+  "run_date": "2026-02-09",
+  "opportunities": [
+    {
+      "name": "Wispr Flow",
+      "developer": "Tanay & Sahaj (Indie Team)",
+      "category": "Productivity / AI Utilities",
+      "revenue_estimate": "",
+      "downloads_estimate": "",
+      "rating": 0.0,
+      "clone_difficulty": 0,
+      "opportunity_score": 0.0,
+      "hook_feature": "",
+      "differentiation_angle": "",
+      "why_viral": "Trending #1 on Product Hunt in Feb 2026. It capitalizes on the 'voice-first' AI trend, replacing clunky native dictation with context-aware AI writing. A perfect example of wrapping an AI API in a seamless native OS utility.",
+      "mvp_features": [],
+      "skip_features": [],
+      "trend_timing": "",
+      "sources": [
+        "https://www.producthunt.com/leaderboard/monthly/2026/2"
+      ]
+    },
+    {
+      "name": "Nible",
+      "developer": "Indie Developer",
+      "category": "Digital Wellbeing",
+      "revenue_estimate": "",
+      "downloads_estimate": "",
+      "rating": 0.0,
+      "clone_difficulty": 0,
+      "opportunity_score": 0.0,
+      "hook_feature": "",
+      "differentiation_angle": "",
+      "why_viral": "Highlighted by Reddit users in 'What apps will you keep using in 2026' discussions. The 'anti-dopamine' and digital detox niche is growing as users get burnt out on algorithmic feeds.",
+      "mvp_features": [],
+      "skip_features": [],
+      "trend_timing": "",
+      "sources": [
+        "https://www.reddit.com/r/ProductivityApps/comments/1qu5h2b/what_productivity_apps_will_you_keep_using_in_2026/"
+      ]
+    },
+    {
+      "name": "Dottie",
+      "developer": "Indie Maker",
+      "category": "Health & Fitness / Journaling",
+      "revenue_estimate": "",
+      "downloads_estimate": "",
+      "rating": 0.0,
+      "clone_difficulty": 0,
+      "opportunity_score": 0.0,
+      "hook_feature": "",
+      "differentiation_angle": "",
+      "why_viral": "Featured in Product Hunt's 'Best of Feb 2026'. As AI journaling becomes crowded, the 'privacy-first' angle is a strong differentiator for users worried about their data training public models.",
+      "mvp_features": [],
+      "skip_features": [],
+      "trend_timing": "",
+      "sources": [
+        "https://www.producthunt.com/leaderboard/monthly/2026/2"
+      ]
+    },
+    {
+      "name": "Dictaflow",
+      "developer": "InterestingBasil (Reddit User)",
+      "category": "Niche Utility / Windows",
+      "revenue_estimate": "",
+      "downloads_estimate": "",
+      "rating": 0.0,
+      "clone_difficulty": 0,
+      "opportunity_score": 0.0,
+      "hook_feature": "",
+      "differentiation_angle": "",
+      "why_viral": "A classic 'scratch your own itch' indie tool found on Reddit. It solves a very specific, painful problem for corporate workers (banking/enterprise) that big companies ignore.",
+      "mvp_features": [],
+      "skip_features": [],
+      "trend_timing": "",
+      "sources": [
+        "https://www.reddit.com/r/ProductivityApps/"
+      ]
+    },
+    {
+      "name": "SetGraph",
+      "developer": "Indie Developer",
+      "category": "Health & Fitness",
+      "revenue_estimate": "",
+      "downloads_estimate": "",
+      "rating": 0.0,
+      "clone_difficulty": 0,
+      "opportunity_score": 0.0,
+      "hook_feature": "",
+      "differentiation_angle": "",
+      "why_viral": "Praised in 2026 comparisons for its speed. It proves that in mature markets (fitness), there is always room for a 'power user' tool that removes friction rather than adding features.",
+      "mvp_features": [],
+      "skip_features": [],
+      "trend_timing": "",
+      "sources": [
+        "https://www.jefit.com/wp/general-fitness/10-best-workout-tracker-apps-in-2026-complete-comparison-guide/"
+      ]
+    },
+    {
+      "name": "Twos",
+      "developer": "Twos Technologies (Small Team)",
+      "category": "Productivity / Note Taking",
+      "revenue_estimate": "",
+      "downloads_estimate": "",
+      "rating": 0.0,
+      "clone_difficulty": 0,
+      "opportunity_score": 0.0,
+      "hook_feature": "",
+      "differentiation_angle": "",
+      "why_viral": "Recurring recommendation on Reddit for 2026. Users are rejecting complex 'systems' (like Notion) for simple, fast capture tools. It represents the 'Calm Productivity' trend.",
+      "mvp_features": [],
+      "skip_features": [],
+      "trend_timing": "",
+      "sources": [
+        "https://self-manager.net/articles/top-10-task-managers-redditors-recommend-2026"
+      ]
+    },
+    {
+      "name": "Time Ledger",
+      "developer": "Indie Maker",
+      "category": "Productivity / Quantified Self",
+      "revenue_estimate": "",
+      "downloads_estimate": "",
+      "rating": 0.0,
+      "clone_difficulty": 0,
+      "opportunity_score": 0.0,
+      "hook_feature": "",
+      "differentiation_angle": "",
+      "why_viral": "Launched on Product Hunt Feb 2026. It reframes a boring category (time tracking) with a fresh mental model (accounting), making it highly marketable to freelancers and optimize-ers.",
+      "mvp_features": [],
+      "skip_features": [],
+      "trend_timing": "",
+      "sources": [
+        "https://www.producthunt.com/leaderboard/monthly/2026/2"
+      ]
+    },
+    {
+      "name": "Lunatask",
+      "developer": "Indie Developer",
+      "category": "Productivity / ADHD",
+      "revenue_estimate": "",
+      "downloads_estimate": "",
+      "rating": 0.0,
+      "clone_difficulty": 0,
+      "opportunity_score": 0.0,
+      "hook_feature": "",
+      "differentiation_angle": "",
+      "why_viral": "Consistently praised on Reddit for its 'privacy-first' approach and ADHD-friendly design. It bundles multiple loose tools into one coherent workflow, a great strategy for indie clones.",
+      "mvp_features": [],
+      "skip_features": [],
+      "trend_timing": "",
+      "sources": [
+        "https://self-manager.net/articles/top-10-task-managers-redditors-recommend-2026"
+      ]
+    },
+    {
+      "name": "Yomio",
+      "developer": "Indie Maker",
+      "category": "Finance / Lifestyle",
+      "revenue_estimate": "",
+      "downloads_estimate": "",
+      "rating": 0.0,
+      "clone_difficulty": 0,
+      "opportunity_score": 0.0,
+      "hook_feature": "",
+      "differentiation_angle": "",
+      "why_viral": "Trending on Product Hunt. Finance apps are usually boring; this one seemingly adds personality or a 'hard truth' angle, which works well for viral marketing on social media.",
+      "mvp_features": [],
+      "skip_features": [],
+      "trend_timing": "",
+      "sources": [
+        "https://www.producthunt.com/leaderboard/monthly/2026/2"
+      ]
+    },
+    {
+      "name": "Tweek",
+      "developer": "Indie Team",
+      "category": "Productivity / Calendar",
+      "revenue_estimate": "",
+      "downloads_estimate": "",
+      "rating": 0.0,
+      "clone_difficulty": 0,
+      "opportunity_score": 0.0,
+      "hook_feature": "",
+      "differentiation_angle": "",
+      "why_viral": "Identified as a 'hidden gem' on Reddit. It serves the 'anti-calendar' crowd who find hourly blocking stressful. Simple mechanics, high aesthetic appeal, easy to replicate.",
+      "mvp_features": [],
+      "skip_features": [],
+      "trend_timing": "",
+      "sources": [
+        "https://coupongini.ghost.io/hidden-productivity-gems-reddit-swears-by-in-2026/"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "name": "The 'Anti-Bloat' Movement",
+      "description": "Users are actively rejecting complex 'operating systems for life' (like Notion) in favor of fast, ephemeral, single-purpose tools.",
+      "examples": [
+        "Twos (Replaces complex systems with fast capture)",
+        "Tweek (Replaces hourly blocking with simple weekly lists)",
+        "SetGraph (Replaces feature-heavy fitness apps with speed)"
+      ],
+      "how_to_apply": "Identify a category dominated by complex apps (e.g., Project Management) and build a version that removes 80% of features to focus purely on speed."
+    },
+    {
+      "name": "Privacy as the AI Counter-Position",
+      "description": "As AI integrates everywhere, a distinct market segment is paying for tools that explicitly guarantee data stays local or private, specifically in sensitive niches like journaling or health.",
+      "examples": [
+        "Dottie (Privacy-first AI journaling)",
+        "Lunatask (Privacy-first ADHD management)"
+      ],
+      "how_to_apply": "Build an AI wrapper where the Unique Selling Proposition (USP) is 'Local-Only' or 'No-Training' for sensitive data types."
+    },
+    {
+      "name": "Reframing Mental Models",
+      "description": "Taking a boring, saturated category and applying a different profession's framework to it to make it feel fresh.",
+      "examples": [
+        "Time Ledger (Reframes 'Time Tracking' as 'Accounting')",
+        "Yomio (Reframes 'Finance' with 'Personality/Hard Truths')"
+      ],
+      "how_to_apply": "Take a chore (cleaning, taxes, email) and reskin the UI/UX to resemble a different activity (e.g., RPG game, accounting ledger, dating app swipe mechanics)."
+    },
+    {
+      "name": "OS-Level Friction Removal",
+      "description": "Tools that don't just exist as apps, but act as utilities to fix Operating System inefficiencies.",
+      "examples": [
+        "Wispr Flow (Fixes native dictation)",
+        "Dictaflow (Fixes enterprise Windows workflows)"
+      ],
+      "how_to_apply": "Find a native feature on Mac/Windows that sucks (e.g., Screenshots, Clipboard, Search) and build a 'Pro' version."
+    },
+    {
+      "name": "Neurodivergent Bundling",
+      "description": "Building specifically for ADHD/Neurodivergent brains by bundling tools that usually sit separately, preventing 'app switching' distraction.",
+      "examples": [
+        "Lunatask (Bundles tasks, habits, and journaling)",
+        "Nible (Digital wellbeing/dopamine management)"
+      ],
+      "how_to_apply": "Create workflows that combine steps usually done in different apps (e.g., a Calendar that is also a To-Do list and a Timer)."
+    }
+  ],
+  "gaps": [
+    "Lack of 'blue collar' or corporate utility tools for Windows (most indie devs focus on Mac)",
+    "Privacy-safe AI solutions for therapy/mental health",
+    "Productivity tools that don't require 'system maintenance' or complex setup"
+  ],
+  "best_opportunities": {}
+}

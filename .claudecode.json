@@ -1,0 +1,11 @@
+{
+  "env": {
+    "CLAUDE_CODE_USE_VERTEX": "1",
+    "CLOUD_ML_REGION": "us-east5",
+    "ANTHROPIC_VERTEX_PROJECT_ID": "gen-lang-client-0494134627",
+    "VERTEX_REGION_CLAUDE_4_5_OPUS": "us-east5",
+    "ANTHROPIC_MODEL": "claude-opus-4-5@20251101",
+    "ANTHROPIC_SMALL_FAST_MODEL": "claude-opus-4-5@20251101",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-5@20251101"
+  }
+}

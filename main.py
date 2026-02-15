@@ -11,8 +11,12 @@ from agents import print_markdown
 
 
 async def main():
+    # run_workflow expects categories (list of strings), mode, and debug
+    # For "all categories" use a general mode with broad categories
     final_state = await run_workflow(
-        user_query="What apps are trending today across all categories?"
+        categories=["AI Photo/Video", "Productivity", "Health & Fitness", "Games"],
+        mode="general",
+        debug=False,
     )
 
     output = final_state.get("output_to_user", "No output generated.")

@@ -1,0 +1,367 @@
+{
+  "mode": "targeted",
+  "niche": "productivity",
+  "run_date": "2026-02-15",
+  "opportunities": [
+    {
+      "name": "Griply",
+      "developer": "Amber Haccou & Team",
+      "category": "Productivity / Goal Setting",
+      "revenue_estimate": "",
+      "downloads_estimate": "",
+      "rating": 0.0,
+      "clone_difficulty": 0,
+      "opportunity_score": 0.0,
+      "hook_feature": "",
+      "differentiation_angle": "",
+      "why_viral": "It's gaining viral traction on Reddit by solving the 'why' missing in standard to-do lists. The bootstrapped team is actively building with community feedback, successfully differentiating from giants like Todoist by focusing on long-term life alignment rather than just tick-boxes.",
+      "mvp_features": [],
+      "skip_features": [],
+      "trend_timing": "",
+      "sources": [
+        "https://www.reddit.com/r/GriplyApp/"
+      ]
+    },
+    {
+      "name": "Typeletter",
+      "developer": "Amber Haccou, Ruud Mulders, Rick van der Linden, Tim Mulders (Bootstrapped team of 4 from the Netherlands)",
+      "category": "Productivity / Goal Tracker / Task Manager",
+      "revenue_estimate": "~$3,800/month (MRR as of late 2025)",
+      "downloads_estimate": "Thousands of users (Exact number unknown, but 'App of the Day' in 60+ countries)",
+      "rating": 4.6,
+      "clone_difficulty": 4,
+      "opportunity_score": 0.0,
+      "hook_feature": "The 'Goal-First' Hierarchy: Connects Vision \u2192 Life Areas \u2192 Goals \u2192 Habits \u2192 Tasks. Unlike standard to-do lists, every task is linked to a higher purpose.",
+      "differentiation_angle": "Most to-do apps (Todoist, TickTick) are 'Why-agnostic'\u2014they just list tasks. Griply differentiates by enforcing a structure where tasks must serve a larger goal. It visualizes this with Gantt charts, progress bars for 'Life Areas' (e.g., Health, Career), and 'Success Metrics' (tracking numeric progress like 'pages read' vs just 'done').",
+      "why_viral": "The 'Scratch Your Own Itch' Narrative: Founder Amber Haccou posted 'I couldn't find a tool that connected my goals, habits, and tasks - so I built Griply' on Reddit (r/ProductivityApps, r/macapps). This authentic story resonated with productivity nerds tired of disconnected apps. The active, transparent engagement from the founders on Reddit built a loyal early community.",
+      "mvp_features": [
+        "Goal Hierarchy Logic (Vision -> Goals -> Tasks)",
+        "Habit Tracker with flexible scheduling (e.g., 3x/week)",
+        "Visual Progress Dashboard (Charts/Graphs)",
+        "Life Areas categorization"
+      ],
+      "skip_features": [
+        "Complex Calendar Integrations (Outlook/Google sync is hard to perfect early)",
+        "Native Desktop Apps (Start with Web/PWA)",
+        "Team/Collaboration features (Focus on personal single-player mode first)"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://www.reddit.com/r/ProductivityApps/comments/1jkfr58/i_couldnt_find_a_tool_that_connected_my_goals/",
+        "https://kill-saas.com/reports/microsaas-2025/",
+        "https://griply.app/",
+        "https://apps.apple.com/us/app/goal-tracker-griply/id1556692747",
+        "https://9to5mac.com/2024/12/07/indie-app-spotlight-griply/"
+      ]
+    },
+    {
+      "name": "MyBikeFitting",
+      "developer": "Amber Haccou, Ruud Mulders, Rick van der Linden, Tim Mulders (Bootstrapped team of 4, Netherlands)",
+      "category": "Productivity / Goal Planner / Habit Tracker",
+      "revenue_estimate": "~$3,800/month (MRR as of late 2025)",
+      "downloads_estimate": "Thousands of users (Exact number unknown, but featured as 'App of the Day' in 60+ countries)",
+      "rating": 4.5,
+      "clone_difficulty": 4,
+      "opportunity_score": 0.0,
+      "hook_feature": "The 'Goal-First' Hierarchy: It doesn't just list tasks; it forces you to link every Daily Task and Habit back to a higher-level 'Goal', which connects to a 'Life Area' and 'Vision'.",
+      "differentiation_angle": "Most to-do apps (Todoist, TickTick) are 'Why-agnostic'\u2014they just manage lists. Griply differentiates by visualizing *progress* toward life goals (using Gantt charts and success metrics like 'pages read' or '% complete') rather than just checking off boxes. It creates a 'Goal-First' rather than 'Task-First' workflow.",
+      "why_viral": "The founder (Amber Haccou) used a 'Scratch Your Own Itch' narrative on Reddit ('I couldn't find a tool that connected my goals... so I built it'). This resonated deeply with productivity nerds tired of disconnected apps for habits, goals, and tasks. The 'App of the Day' feature by Apple provided a massive credibility boost.",
+      "mvp_features": [
+        "Hierarchical Data Model: Vision -> Life Areas -> Goals -> Habits -> Tasks",
+        "Visual Progress Tracking: Progress bars for goals based on completed sub-tasks/habits",
+        "Flexible Habit Scheduling: Support for 'X times per week' frequencies, not just specific days",
+        "Dashboard: A 'Today' view that pulls tasks and habits from various goals into one list"
+      ],
+      "skip_features": [
+        "Native Calendar Integration (Outlook/Google sync is complex)",
+        "Gantt Chart View (High engineering effort, can be added later)",
+        "Team/Collaboration features (Focus on single-player mode first)"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://www.reddit.com/r/ProductivityApps/comments/1jkfr58/i_couldnt_find_a_tool_that_connected_my_goals/",
+        "https://kill-saas.com/reports/microsaas-2025/",
+        "https://griply.app/",
+        "https://apps.apple.com/us/app/goal-tracker-griply/id1556692747",
+        "https://www.producthunt.com/products/griply"
+      ]
+    },
+    {
+      "name": "Habit Pixel",
+      "developer": "Amber Haccou, Ruud Mulders, Rick van der Linden, Tim Mulders (Bootstrapped team of 4)",
+      "category": "Productivity / Goal Tracker",
+      "revenue_estimate": "~$3,800/month (MRR as of Dec 2025)",
+      "downloads_estimate": "Thousands of users (Exact number unknown, but 'App of the Day' in 60+ countries)",
+      "rating": 4.6,
+      "clone_difficulty": 4,
+      "opportunity_score": 0.0,
+      "hook_feature": "The 'Goal-First' Hierarchy: Connects daily tasks/habits directly to long-term life visions, solving the 'why am I doing this?' problem.",
+      "differentiation_angle": "Unlike Todoist or TickTick which are just lists, Griply forces a structure: Vision -> Life Area -> Goal -> Habit -> Task. It adds 'Success Metrics' (e.g., 'read 50 pages' vs just 'read') and visual Gantt charts for personal goals.",
+      "why_viral": "The founder (Amber) personally engaged with frustrated productivity enthusiasts on Reddit who were tired of 'maintenance mode' apps. The narrative of 'I couldn't find a tool that connected goals to tasks, so I built it' resonated deeply with the r/ProductivityApps and r/macapps communities.",
+      "mvp_features": [
+        "Goal Hierarchy (Vision -> Goal -> Task)",
+        "Habit Tracker with flexible scheduling (e.g., 3x/week)",
+        "Visual Progress Bars/Charts for Goals",
+        "Life Areas Dashboard"
+      ],
+      "skip_features": [
+        "Native Calendar Integration (complex to build early)",
+        "Team Collaboration/Sharing (focus on personal first)",
+        "Natural Language Processing (nice to have, not essential for MVP)"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://griply.app/",
+        "https://kill-saas.com/reports/microsaas-2025/",
+        "https://www.reddit.com/r/ProductivityApps/comments/1jkfr58/i_couldnt_find_a_tool_that_connected_my_goals/",
+        "https://www.producthunt.com/products/griply",
+        "https://9to5mac.com/2024/12/07/indie-app-spotlight-griply/"
+      ]
+    },
+    {
+      "name": "HabitKit",
+      "developer": "Amber Haccou, Ruud Mulders, Rick van der Linden, Tim Mulders (Bootstrapped team of 4)",
+      "category": "Productivity / Goal & Habit Tracker",
+      "revenue_estimate": "~$3,800/month",
+      "downloads_estimate": "Thousands of users (exact number unknown, but 'App of the Day' in 60+ countries)",
+      "rating": 4.6,
+      "clone_difficulty": 4,
+      "opportunity_score": 0.0,
+      "hook_feature": "The 'Goal-First System' hierarchy: Vision \u2192 Life Areas \u2192 Goals \u2192 Habits \u2192 Tasks. Unlike standard to-do lists, every task is linked to a higher purpose.",
+      "differentiation_angle": "Most productivity apps are 'why-agnostic' (just lists). Griply differentiates by enforcing a structure where tasks must serve a goal. It adds 'Success Metrics' (e.g., pages read, revenue earned) to goals, not just binary 'done/not done' checkboxes.",
+      "why_viral": "Gained traction through authentic 'founder-led' storytelling on Reddit. The founder (Amber) openly shared her frustration with existing tools ('I couldn't find a tool that connected my goals... so I built it') in r/ProductivityApps and r/macapps, engaging directly with every comment.",
+      "mvp_features": [
+        "Hierarchical data model (Vision -> Goal -> Task)",
+        "Habit tracker with flexible scheduling (e.g., '3x/week')",
+        "Visual progress dashboards (Gantt charts/progress bars)",
+        "Life Area categorization"
+      ],
+      "skip_features": [
+        "Complex calendar integrations (Outlook/Google)",
+        "Natural Language Processing (nice to have, not MVP)",
+        "Team collaboration features (focus on personal use first)"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://kill-saas.com/reports/microsaas-2025/",
+        "https://www.reddit.com/r/ProductivityApps/comments/1jkfr58/i_couldnt_find_a_tool_that_connected_my_goals/",
+        "https://griply.app/",
+        "https://apps.apple.com/us/app/goal-tracker-griply/id1556692747",
+        "https://www.reddit.com/r/macapps/comments/1ozhd75/thanks_rmacapps_for_helping_shape_griply_heres/"
+      ]
+    },
+    {
+      "name": "Tweek",
+      "developer": "Amber Haccou, Ruud Mulders, Rick van der Linden, Tim Mulders (Bootstrapped Team of 4)",
+      "category": "Productivity / Goal Tracker / Task Manager",
+      "revenue_estimate": "~$3,800/month (MRR as of late 2025)",
+      "downloads_estimate": "Thousands of users (Featured 'App of the Day' in 60+ countries)",
+      "rating": 4.6,
+      "clone_difficulty": 4,
+      "opportunity_score": 0.0,
+      "hook_feature": "The 'Goal-First' Hierarchy",
+      "differentiation_angle": "Most apps are just lists (Todoist) or calendars. Griply differentiates by enforcing a hierarchy: Vision \u2192 Life Areas \u2192 Goals \u2192 Habits/Tasks. It solves the 'busy but not productive' feeling by ensuring every daily task links back to a long-term life goal. It also visualizes progress with Gantt-style charts and 'Success Metrics' (e.g., tracking pages read vs just checking a box).",
+      "why_viral": "The founder (Amber Haccou) used a classic 'scratch your own itch' narrative on Reddit ('I couldn't find a tool that connected my goals, habits, and tasks - so I built Griply'). This resonated with productivity enthusiasts tired of fragmented systems (Notion for goals + Todoist for tasks). The team maintains high engagement by building features directly requested by the community (e.g., 'Liquid Glass' UI update).",
+      "mvp_features": [
+        "Hierarchical Data Model (Vision -> Goal -> Task)",
+        "Life Areas Dashboard (Visual balance of work/health/etc)",
+        "Habit Tracker with flexible schedules (e.g., '3x per week')",
+        "Progress Visualization (Gantt charts or progress bars linked to numeric targets)"
+      ],
+      "skip_features": [
+        "Complex Calendar Integrations (Outlook/Google sync is hard to get right initially)",
+        "Natural Language Processing (nice to have, but not the core value prop)",
+        "Team Collaboration (focus on single-player mode first)"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://griply.app/",
+        "https://www.reddit.com/r/ProductivityApps/comments/1jkfr58/i_couldnt_find_a_tool_that_connected_my_goals/",
+        "https://kill-saas.com/reports/microsaas-2025/",
+        "https://apps.apple.com/us/app/goal-tracker-griply/id1556692747",
+        "https://9to5mac.com/2024/12/07/indie-app-spotlight-griply/"
+      ]
+    },
+    {
+      "name": "AppStoreReady",
+      "developer": "Amber Haccou, Ruud Mulders, Rick van der Linden, Tim Mulders (Bootstrapped Team of 4, Netherlands)",
+      "category": "Productivity / Goal & Habit Tracker",
+      "revenue_estimate": "~$3,800/month (MRR as of Dec 2025)",
+      "downloads_estimate": "Thousands of users (Exact count unknown, but 'App of the Day' in 60+ countries)",
+      "rating": 4.8,
+      "clone_difficulty": 3,
+      "opportunity_score": 0.0,
+      "hook_feature": "The 'Goal-First' Hierarchy: Vision \u2192 Life Areas \u2192 Goals \u2192 Habits \u2192 Tasks. It forces users to attach a 'Why' to every 'What'.",
+      "differentiation_angle": "Most to-do apps (Todoist, TickTick) are 'Why-agnostic' lists. Griply differentiates by refusing to be just a list; it is a life alignment tool where you cannot add a task without it serving a larger Life Area or Goal. It also offers 'Success Metrics' (e.g., tracking 'pages read' vs just 'done').",
+      "why_viral": "The founder (Amber Haccou) masterfully used Reddit. She didn't just post ads; she posted her personal story: 'I couldn't find a tool that connected my goals, habits, and tasks - so I built Griply.' This resonates with productivity nerds tired of disconnected apps. The 'App of the Day' feature by Apple was a major accelerant.",
+      "mvp_features": [
+        "Hierarchical Data Model (Vision -> Goal -> Task)",
+        "Life Areas Dashboard (Visual progress bars for Health, Career, etc.)",
+        "Habit Tracker with 'Flexible Targets' (e.g., 3x/week)",
+        "Gantt-style Goal Roadmap",
+        "Journal/Reflection prompts linked to goals"
+      ],
+      "skip_features": [
+        "Complex Calendar Integrations (Outlook/Google sync is hard to perfect early on)",
+        "Natural Language Processing (nice to have, but not the core value prop)",
+        "Team Collaboration (focus on personal productivity first)"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://griply.app/",
+        "https://www.reddit.com/r/GriplyApp/",
+        "https://kill-saas.com/reports/microsaas-2025/",
+        "https://www.producthunt.com/products/griply",
+        "https://9to5mac.com/2024/12/07/indie-app-spotlight-griply/"
+      ]
+    },
+    {
+      "name": "MailMolt",
+      "developer": "Amber Haccou, Ruud Mulders, Rick van der Linden, Tim Mulders (Bootstrapped Team of 4)",
+      "category": "Productivity / Goal Tracker",
+      "revenue_estimate": "~$3,800/month (MRR) as of late 2025",
+      "downloads_estimate": "Thousands of users (Exact number unknown, but 'App of the Day' in 60+ countries)",
+      "rating": 4.8,
+      "clone_difficulty": 4,
+      "opportunity_score": 0.0,
+      "hook_feature": "The 'Goal-First System' hierarchy: Vision \u2192 Life Areas \u2192 Goals \u2192 Habits \u2192 Tasks. It forces every daily task to be linked to a larger purpose, solving the 'busy but not productive' feeling.",
+      "differentiation_angle": "Most to-do apps (Todoist, TickTick) are 'Why-agnostic'\u2014they just list what to do. Griply differentiates by visualizing *progress* toward life goals (Gantt charts, success metrics like 'pages read' vs just 'done'). It positions itself as a 'Life Planner' rather than just a task manager.",
+      "why_viral": "The founder (Amber) used a classic 'scratch your own itch' narrative on Reddit: 'I couldn't find a tool that connected my goals, habits, and tasks, so I built it.' This resonated with productivity nerds tired of disconnected apps. High-touch community engagement kept the momentum going.",
+      "mvp_features": [
+        "Goal Hierarchy Logic (Vision -> Goals -> Tasks)",
+        "Habit Tracker with flexible schedules (e.g., 3x/week)",
+        "Visual Progress Bars for Goals (0-100%)",
+        "Life Area Dashboard (Work, Health, etc.)"
+      ],
+      "skip_features": [
+        "Native Calendar Integration (hard to build early)",
+        "Complex Team Collaboration/Sharing",
+        "Natural Language Processing (nice to have, not MVP)"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://kill-saas.com/reports/microsaas-2025/",
+        "https://www.reddit.com/r/ProductivityApps/comments/1jkfr58/i_couldnt_find_a_tool_that_connected_my_goals/",
+        "https://apps.apple.com/us/app/goal-tracker-griply/id1556692747",
+        "https://griply.app/"
+      ]
+    },
+    {
+      "name": "Plae",
+      "developer": "Amber Haccou, Ruud Mulders, Rick van der Linden, Tim Mulders (Bootstrapped Team of 4)",
+      "category": "Productivity / Goal Tracker",
+      "revenue_estimate": "~$3,800/month (MRR)",
+      "downloads_estimate": "Thousands of active users (Ranked 'App of the Day' in 60+ countries)",
+      "rating": 4.6,
+      "clone_difficulty": 4,
+      "opportunity_score": 0.0,
+      "hook_feature": "The 'Goal-First' Hierarchy: Vision \u2192 Life Areas \u2192 Goals \u2192 Habits \u2192 Tasks",
+      "differentiation_angle": "Most to-do apps are 'Why-agnostic' (just lists). Griply forces you to link every task/habit to a higher-level goal or life vision, preventing 'busy work' that doesn't move the needle.",
+      "why_viral": "The founder (Amber) authentically embedded herself in productivity subreddits (r/productivityapps, r/macapps), sharing the 'I couldn't find a tool that did this' story. This resonated with 'productivity porn' enthusiasts tired of disconnected apps like Todoist + Notion.",
+      "mvp_features": [
+        "Goal Hierarchy Logic (Vision -> Goal -> Task)",
+        "Flexible Habit Scheduling (e.g., '3x per week' vs specific days)",
+        "Visual Progress Bars (Life Areas)",
+        "Dashboard with 'Success Metrics' (numeric tracking)"
+      ],
+      "skip_features": [
+        "Native Desktop Apps (start with Web/PWA)",
+        "Complex Gantt Charts (v1 can just be lists)",
+        "Calendar Integration (technically hard, added later by Griply)"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://kill-saas.com/reports/microsaas-2025/",
+        "https://www.reddit.com/r/ProductivityApps/comments/1jkfr58/i_couldnt_find_a_tool_that_connected_my_goals/",
+        "https://griply.app/",
+        "https://www.producthunt.com/products/griply"
+      ]
+    },
+    {
+      "name": "Minimalist",
+      "developer": "Amber Haccou, Ruud Mulders, Rick van der Linden, Tim Mulders (Bootstrapped Team of 4)",
+      "category": "Productivity / Goal & Habit Tracker",
+      "revenue_estimate": "~$3,800/month MRR (late 2025 estimate)",
+      "downloads_estimate": "Thousands of active users (Ranked 'App of the Day' in 60+ countries)",
+      "rating": 4.6,
+      "clone_difficulty": 4,
+      "opportunity_score": 0.0,
+      "hook_feature": "The 'Goal-First' Hierarchy: Connects long-term Vision \u2192 Life Areas \u2192 Goals \u2192 Habits \u2192 Daily Tasks.",
+      "differentiation_angle": "Standard to-do apps (Todoist, TickTick) are 'Why-agnostic'\u2014they just list tasks. Griply forces every task to be a child of a larger goal, solving the feeling of being 'busy but not productive.' It also visualizes progress with Gantt charts and 'Success Metrics' (e.g., pages read vs. just 'done').",
+      "why_viral": "Gained traction through a 'Build in Public' strategy on Reddit (r/macapps, r/ProductivityApps). The founder (Amber) personally engages with every critique, turning complainers into beta testers. This created a loyal 'superfan' base that upvotes their launches on Product Hunt (Top 3 Product of the Day).",
+      "mvp_features": [
+        "Hierarchical Data Model (Vision -> Goal -> Task)",
+        "Habit Tracker with flexible scheduling (e.g., '3x/week')",
+        "Visual Progress Dashboard (Charts/Graphs)",
+        "Life Area categorization"
+      ],
+      "skip_features": [
+        "Native Desktop Apps (Start with Web/PWA)",
+        "Complex Calendar Integrations (Outlook/Google sync is hard to maintain early on)",
+        "Team Collaboration/Sharing (Focus on single-player mode first)"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://www.reddit.com/r/ProductivityApps/comments/1jkfr58/i_couldnt_find_a_tool_that_connected_my_goals/",
+        "https://kill-saas.com/reports/microsaas-2025/",
+        "https://griply.app/help/get-started/griply-s-hierarchy",
+        "https://www.producthunt.com/products/griply",
+        "https://www.reddit.com/r/GriplyApp/"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "name": "The 'Why' Hierarchy",
+      "description": "Moving beyond flat to-do lists by enforcing a data structure that connects daily actions to long-term visions.",
+      "examples": [
+        "Griply's Structure: Vision \u2192 Life Areas \u2192 Goals \u2192 Habits \u2192 Tasks",
+        "Prevents 'orphaned tasks' (doing things that don't matter)"
+      ],
+      "how_to_apply": "Don't build a list app. Build a relational database where every 'child' item (task) must have a 'parent' (goal/vision)."
+    },
+    {
+      "name": "Visual Reward Systems",
+      "description": "Using advanced data visualization (Gantt charts, progress bars) as the primary retention hook, replacing the simple checkbox.",
+      "examples": [
+        "Life Area Dashboard (Health vs. Career balance visuals)",
+        "Success Metrics (tracking 'pages read' vs just 'task done')"
+      ],
+      "how_to_apply": "The UI must make the user feel like they are leveling up a character in a game. The 'Moat' is the quality of the charts, not the task list."
+    },
+    {
+      "name": "Founder-Led Narrative Marketing",
+      "description": "Growth driven entirely by the 'Scratch Your Own Itch' story on community platforms rather than paid ads.",
+      "examples": [
+        "Founder Amber Haccou posting 'I couldn't find a tool...' on r/ProductivityApps",
+        "Converting complainers in comments into beta testers"
+      ],
+      "how_to_apply": "Launch on Reddit/Discord with a personal story of frustration with current tools, not a corporate promo."
+    },
+    {
+      "name": "Success Metric Differentiation",
+      "description": "Shifting from binary tracking (Done/Not Done) to numeric tracking (Value accrued).",
+      "examples": [
+        "Tracking 'Revenue Earned' or 'Pages Read' attached to a goal",
+        "Visualizing accumulation over time"
+      ],
+      "how_to_apply": "Allow users to define *how* success is measured for each goal (binary, numeric, percentage)."
+    },
+    {
+      "name": "Single-Player Focus",
+      "description": "Deliberately ignoring team/collaboration features to perfect the personal experience.",
+      "examples": [
+        "No team sharing",
+        "No complex email integrations",
+        "Focus on 'Self-Improvement' over 'Project Management'"
+      ],
+      "how_to_apply": "Cut all collaboration features from your MVP. Focus 100% on the individual user's psychology."
+    }
+  ],
+  "gaps": [
+    "Lack of 'Life Alignment' in standard to-do apps (Todoist is too simple, Notion is too complex)",
+    "Missing 'Middle Ground' tools that offer structure without requiring 10 hours of setup",
+    "Absence of visual feedback loops in habit trackers (most just show streaks, not impact on larger goals)"
+  ],
+  "best_opportunities": {}
+}
