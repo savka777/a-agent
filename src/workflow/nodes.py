@@ -230,21 +230,49 @@ What would you like to do?""")
 
     # Check for tool calls
     if result.has_tool_calls:
-        logger.info("[discovery] Agent requesting tools")
+        # Check if this is the submit_discovered_apps output tool
+        for tool_call in result.messages[-1].tool_calls:
+            if tool_call.get("name") == "submit_discovered_apps":
+                # Extract apps from tool call args - no parsing needed!
+                apps_data = tool_call.get("args", {}).get("apps", [])
+                logger.info(f"[discovery] Got {len(apps_data)} apps from submit_discovered_apps tool")
+
+                new_apps = []
+                for app in apps_data:
+                    new_apps.append(AppOpportunity(
+                        name=app.get("name", ""),
+                        developer=app.get("developer", ""),
+                        category=app.get("category", ""),
+                        why_viral=app.get("why_interesting", app.get("description", "")),
+                        sources=[app.get("source_url")] if app.get("source_url") else [],
+                    ))
+
+                # Update scratchpad
+                updated_scratchpad = ResearchScratchpad(
+                    executed_queries=scratchpad.executed_queries + [q.query for q in plan if not q.executed],
+                    key_findings=scratchpad.key_findings,
+                    gaps_identified=scratchpad.gaps_identified,
+                    iteration_count=scratchpad.iteration_count + 1,
+                )
+
+                return {
+                    "discovered_apps": new_apps,
+                    "scratchpad": updated_scratchpad,
+                    "discovery_messages": [],  # Clear for next phase
+                    "current_phase": ResearchPhase.DEEP_RESEARCH,
+                }
+
+        # Not the output tool - must be search tools, continue the loop
+        logger.info("[discovery] Agent requesting search tools")
         return {
             "discovery_messages": result.messages,
             "current_phase": ResearchPhase.DISCOVERY,
         }
 
-    # No tool calls - try to parse discovered apps
+    # No tool calls - fallback to parsing (shouldn't happen with new approach)
+    logger.warning("[discovery] No tool calls - falling back to text parsing")
     new_apps = parse_apps_from_response(result.content)
     logger.info(f"[discovery] Found {len(new_apps)} new apps from agent response")
-
-    # If no apps found but we have tool results, try to extract from message history
-    if not new_apps and discovery_messages:
-        logger.info("[discovery] Attempting to extract apps from tool results")
-        new_apps = extract_apps_from_messages(discovery_messages)
-        logger.info(f"[discovery] Extracted {len(new_apps)} apps from message history")
 
     # Update scratchpad with executed queries
     updated_scratchpad = ResearchScratchpad(
@@ -357,13 +385,53 @@ async def deep_research_node(state: AgentState) -> Dict[str, Any]:
 
     # Check for tool calls
     if result.has_tool_calls:
-        logger.info(f"[deep_research] Agent requesting tools for {current_app.name}")
+        # Check if this is the submit_app_research output tool
+        for tool_call in result.messages[-1].tool_calls:
+            if tool_call.get("name") == "submit_app_research":
+                # Extract research from tool call args - no parsing needed!
+                research = tool_call.get("args", {}).get("research", {})
+                logger.info(f"[deep_research] Got research from submit_app_research tool")
+
+                # Update the app with research data
+                updated_app = current_app
+                updated_app.developer = research.get("developer", updated_app.developer)
+                updated_app.category = research.get("category", updated_app.category)
+                updated_app.revenue_estimate = research.get("revenue_estimate", "unknown")
+                updated_app.downloads_estimate = research.get("downloads_estimate", "unknown")
+                updated_app.rating = research.get("rating")
+                updated_app.hook_feature = research.get("hook_feature", "")
+                updated_app.differentiation_angle = research.get("differentiation_angle", "")
+                updated_app.why_viral = research.get("why_viral", updated_app.why_viral)
+                updated_app.growth_strategy = research.get("growth_strategy", "")
+                updated_app.clone_difficulty = research.get("clone_difficulty", 3)
+                updated_app.mvp_features = research.get("mvp_features", [])
+                updated_app.skip_features = research.get("skip_features", [])
+                updated_app.clone_lessons = research.get("clone_lessons", "")
+                updated_app.sources = research.get("sources", updated_app.sources)
+                updated_app.research_complete = True
+
+                # Create updated apps list
+                updated_apps = apps.copy()
+                updated_apps[current_index] = updated_app
+
+                logger.info(f"[deep_research] Completed research on {current_app.name}")
+
+                return {
+                    "discovered_apps": updated_apps,
+                    "current_app_index": current_index + 1,
+                    "deep_research_messages": [],  # Clear for next app
+                    "current_phase": ResearchPhase.DEEP_RESEARCH,  # Loop to next app
+                }
+
+        # Not the output tool - must be search tools, continue the loop
+        logger.info(f"[deep_research] Agent requesting search tools for {current_app.name}")
         return {
             "deep_research_messages": result.messages,
             "current_phase": ResearchPhase.DEEP_RESEARCH,
         }
 
-    # No tool calls - update app with research and move to next
+    # No tool calls - fallback to parsing (shouldn't happen with new approach)
+    logger.warning("[deep_research] No tool calls - falling back to text parsing")
     updated_app = update_app_with_research(current_app, result.content)
 
     # Create updated apps list

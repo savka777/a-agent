@@ -1,0 +1,251 @@
+{
+  "mode": "targeted",
+  "niche": "AI Development help tools",
+  "run_date": "2026-02-15",
+  "opportunities": [
+    {
+      "name": "Sleek",
+      "developer": "Mattia Pomelli",
+      "category": "Design Tools",
+      "revenue_estimate": "",
+      "downloads_estimate": "",
+      "rating": 0.0,
+      "clone_difficulty": 0,
+      "opportunity_score": 0.0,
+      "hook_feature": "",
+      "differentiation_angle": "",
+      "why_viral": "Went from launch to $10k MRR in just 6 weeks. It capitalizes on the 'vibe coding' trend where non-designers need high-quality visual output instantly.",
+      "mvp_features": [],
+      "skip_features": [],
+      "trend_timing": "",
+      "sources": [
+        "https://www.indiehackers.com/post/tech/hitting-10k-mrr-in-six-weeks-with-an-ai-design-tool-pEvmU5qkWS6ny0AR9SUv"
+      ]
+    },
+    {
+      "name": "SuperX",
+      "developer": "James Fleischmann",
+      "category": "Social Media Analytics",
+      "revenue_estimate": "",
+      "downloads_estimate": "",
+      "rating": 0.0,
+      "clone_difficulty": 0,
+      "opportunity_score": 0.0,
+      "hook_feature": "",
+      "differentiation_angle": "",
+      "why_viral": "Hit $23k MRR in six months with zero paid marketing, relying entirely on viral content loops. Shows the persistent value of platform-specific tooling.",
+      "mvp_features": [],
+      "skip_features": [],
+      "trend_timing": "",
+      "sources": [
+        "https://www.indiehackers.com/post/tech/hitting-23k-mrr-in-six-months-after-five-failures-4d64o9ev4AXXhX9ogHQQ"
+      ]
+    },
+    {
+      "name": "PayPerCrawl",
+      "developer": "Indie Team (Greg Isenberg Portfolio)",
+      "category": "Web Security / Monetization",
+      "revenue_estimate": "",
+      "downloads_estimate": "",
+      "rating": 0.0,
+      "clone_difficulty": 0,
+      "opportunity_score": 0.0,
+      "hook_feature": "",
+      "differentiation_angle": "",
+      "why_viral": "Addresses a massive 2026 pain point: AI companies scraping content for free. It turns a defensive need (blocking bots) into a revenue stream.",
+      "mvp_features": [],
+      "skip_features": [],
+      "trend_timing": "",
+      "sources": [
+        "https://www.linkedin.com/posts/gisenberg_30-ways-to-find-your-next-10k-mrr-idea-activity-7393384395690332160-i8r2"
+      ]
+    },
+    {
+      "name": "OpenClaw",
+      "developer": "Indie / Open Source Community",
+      "category": "AI Developer Tools",
+      "revenue_estimate": "",
+      "downloads_estimate": "",
+      "rating": 0.0,
+      "clone_difficulty": 0,
+      "opportunity_score": 0.0,
+      "hook_feature": "",
+      "differentiation_angle": "",
+      "why_viral": "Viral open-source alternative to proprietary 'vibe coding' tools. It represents the growing demand for local-first, privacy-focused AI agents.",
+      "mvp_features": [],
+      "skip_features": [],
+      "trend_timing": "",
+      "sources": [
+        "https://www.youtube.com/watch?v=-VTiqivKOB8"
+      ]
+    },
+    {
+      "name": "Agentset",
+      "developer": "Indie Developer",
+      "category": "AI Infrastructure",
+      "revenue_estimate": "",
+      "downloads_estimate": "",
+      "rating": 0.0,
+      "clone_difficulty": 0,
+      "opportunity_score": 0.0,
+      "hook_feature": "",
+      "differentiation_angle": "",
+      "why_viral": "Launched Feb 2026 on Product Hunt. Fills the gap between simple RAG demos and actual production-ready infrastructure for indie devs.",
+      "mvp_features": [],
+      "skip_features": [],
+      "trend_timing": "",
+      "sources": [
+        "https://www.producthunt.com/products/agentset/launches"
+      ]
+    },
+    {
+      "name": "SiteGPT",
+      "developer": "Bhanu Teja",
+      "category": "Customer Support AI",
+      "revenue_estimate": "",
+      "downloads_estimate": "",
+      "rating": 0.0,
+      "clone_difficulty": 0,
+      "opportunity_score": 0.0,
+      "hook_feature": "",
+      "differentiation_angle": "",
+      "why_viral": "A classic indie success story that scaled to $13k+ MRR. It proves that simple, well-executed wrappers around LLMs solving specific business problems remain profitable.",
+      "mvp_features": [],
+      "skip_features": [],
+      "trend_timing": "",
+      "sources": [
+        "https://medium.com/@AIBites/engineering-as-marketing-the-secret-to-13k-mrr-playbook-e9f3adabf48d"
+      ]
+    },
+    {
+      "name": "Queue",
+      "developer": "Indie Founder",
+      "category": "Productivity / Agency Tools",
+      "revenue_estimate": "",
+      "downloads_estimate": "",
+      "rating": 0.0,
+      "clone_difficulty": 0,
+      "opportunity_score": 0.0,
+      "hook_feature": "",
+      "differentiation_angle": "",
+      "why_viral": "Reached $134k MRR as a solo/small team project. It targets the booming 'productized service' economy.",
+      "mvp_features": [],
+      "skip_features": [],
+      "trend_timing": "",
+      "sources": [
+        "https://www.thesuccessfulprojects.com/indie-hackers-build-saas-with-no-code-and-ai/"
+      ]
+    },
+    {
+      "name": "PDF.ai",
+      "developer": "Seth Kramer",
+      "category": "AI Utility",
+      "revenue_estimate": "",
+      "downloads_estimate": "",
+      "rating": 0.0,
+      "clone_difficulty": 0,
+      "opportunity_score": 0.0,
+      "hook_feature": "",
+      "differentiation_angle": "",
+      "why_viral": "Simple utility that scaled to $100k MRR. Demonstrates that doing one simple thing extremely well (chat with docs) can still beat complex enterprise suites.",
+      "mvp_features": [],
+      "skip_features": [],
+      "trend_timing": "",
+      "sources": [
+        "https://crazyburst.com/ai-saas-solo-founder-success-stories-2026/"
+      ]
+    },
+    {
+      "name": "Senja.io",
+      "developer": "Olly & Wilson",
+      "category": "Marketing Tools",
+      "revenue_estimate": "",
+      "downloads_estimate": "",
+      "rating": 0.0,
+      "clone_difficulty": 0,
+      "opportunity_score": 0.0,
+      "hook_feature": "",
+      "differentiation_angle": "",
+      "why_viral": "Bootstrapped to $1M ARR. It solves a universal problem for every other indie maker: social proof.",
+      "mvp_features": [],
+      "skip_features": [],
+      "trend_timing": "",
+      "sources": [
+        "https://www.thesuccessfulprojects.com/indie-hackers-build-saas-with-no-code-and-ai/"
+      ]
+    },
+    {
+      "name": "Screen Studio",
+      "developer": "Adam",
+      "category": "Video Production",
+      "revenue_estimate": "",
+      "downloads_estimate": "",
+      "rating": 0.0,
+      "clone_difficulty": 0,
+      "opportunity_score": 0.0,
+      "hook_feature": "",
+      "differentiation_angle": "",
+      "why_viral": "The 'gold standard' for indie hackers sharing demos on X/Twitter. It created its own aesthetic that others are now trying to clone.",
+      "mvp_features": [],
+      "skip_features": [],
+      "trend_timing": "",
+      "sources": [
+        "https://www.indiehackers.com/post/tech/hitting-23k-mrr-in-six-months-after-five-failures-4d64o9ev4AXXhX9ogHQQ"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "name": "The 'Gold Rush' Shovel Strategy",
+      "description": "A disproportionate number of successes are B2B tools building specifically for other founders, agencies, and creators.",
+      "examples": [
+        "Senja.io targets SaaS founders needing social proof",
+        "Screen Studio targets makers needing high-quality demos",
+        "Queue targets the growing 'productized service' agency market"
+      ],
+      "how_to_apply": "Build tools that help other people make money or sell their services more effectively."
+    },
+    {
+      "name": "Automated Polish / 'Vibe Coding'",
+      "description": "Apps that take raw input and instantly apply a high-quality 'professional' aesthetic are winning over complex professional tools.",
+      "examples": [
+        "Sleek allows non-designers to create pro visuals instantly",
+        "Screen Studio automatically applies smooth zooms and backgrounds to screen recordings"
+      ],
+      "how_to_apply": "Focus on 'Output Quality' as your main feature. Remove the configuration knobs and just make the result look expensive automatically."
+    },
+    {
+      "name": "Defensive AI Monetization",
+      "description": "Moving from generating content to protecting/gatekeeping content against AI bots.",
+      "examples": [
+        "PayPerCrawl turns the 'problem' of AI scraping into a revenue stream",
+        "OpenClaw offers a privacy-focused, local-first alternative to big AI data vacuums"
+      ],
+      "how_to_apply": "Identify where AI is causing a nuisance (scraping, spam, privacy loss) and build a toll booth or shield."
+    },
+    {
+      "name": "The 'Wrapper' Maturity Phase",
+      "description": "Simple AI wrappers are still profitable, but only if they solve a specific workflow friction rather than just exposing the model.",
+      "examples": [
+        "PDF.ai creates a specific UI for document interrogation",
+        "SiteGPT solves the specific workflow of training a bot on a sitemap for support"
+      ],
+      "how_to_apply": "Don't just provide chat; provide the specific pre-processing and post-processing context for a narrow task."
+    },
+    {
+      "name": "Platform Risk/Reward",
+      "description": "Building deep tooling for a single platform remains a viable path to $20k+ MRR without paid ads.",
+      "examples": [
+        "SuperX focuses entirely on X/Twitter analytics/growth",
+        "SiteGPT focuses on web-based customer support chat"
+      ],
+      "how_to_apply": "Pick a platform (LinkedIn, Reddit, Bluesky) and build the missing 'Pro' suite for it."
+    }
+  ],
+  "gaps": [
+    "Lack of 'Screen Studio' quality tools for mobile-first demos (vertical video)",
+    "Missing infrastructure for monetizing personal data against AI training (Individual version of PayPerCrawl)",
+    "Gap between 'No-Code' AI builders and 'Pro-Code' infrastructure (Agentset fills this, but more specific verticals exist)"
+  ],
+  "best_opportunities": {}
+}

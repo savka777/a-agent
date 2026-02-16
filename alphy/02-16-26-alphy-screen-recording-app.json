@@ -1,0 +1,383 @@
+{
+  "mode": "targeted",
+  "niche": "screen recording apps for iphone similair to screen studio on mac",
+  "run_date": "2026-02-16",
+  "opportunities": [
+    {
+      "name": "Screen Studio",
+      "developer": "Adam Pietrasiak",
+      "category": "Screen Recording / Video Editing",
+      "revenue_estimate": "~$30,000+/month (Oct 2024 estimate)",
+      "downloads_estimate": "8,000+ paid customers",
+      "rating": 4.8,
+      "clone_difficulty": 4,
+      "opportunity_score": 0.0,
+      "hook_feature": "Auto-Zoom: Automatically zooms in on cursor clicks and smooths out mouse jitter, making raw recordings look like professional edits.",
+      "differentiation_angle": "A high-fidelity 'cinematic' aesthetic (motion blur, wallpaper padding, smooth cursor) combined with zero-effort editing. It targets the 'lazy pro' demographic.",
+      "why_viral": "The founder used 'Build in Public' on Twitter/X, sharing satisfying 'before vs after' videos. The output videos were so distinct that users began recognizing the 'Screen Studio look' in other people's marketing, creating a viral loop.",
+      "mvp_features": [
+        "High-res screen capture",
+        "Automated cursor tracking (metadata)",
+        "Auto-zoom on click events",
+        "Cursor smoothing algorithm",
+        "Motion blur rendering"
+      ],
+      "skip_features": [
+        "Cloud hosting (keep it local first)",
+        "Team collaboration tools",
+        "Complex non-linear editing timeline"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://screen.studio/",
+        "https://www.starterstory.com/screen-studio-breakdown",
+        "https://stackshare.io/stackups/electron-vs-swift",
+        "https://twitter.com/pie6k"
+      ]
+    },
+    {
+      "name": "Cap",
+      "developer": "Adam Pietrasiak",
+      "category": "Productivity / Video Tools",
+      "revenue_estimate": "$30,000 - $50,000+/month (Estimated based on late 2024 data)",
+      "downloads_estimate": "8,000+ paid customers",
+      "rating": 4.8,
+      "clone_difficulty": 4,
+      "opportunity_score": 0.0,
+      "hook_feature": "Automatic 'Cinematic' Editing",
+      "differentiation_angle": "It automates the tedious 'zoom and pan' editing that creators usually do manually in After Effects. It turns a boring screen recording into a high-production promo video instantly.",
+      "why_viral": "The 'How did you make that?' effect. Users posted smooth, zoomed-in demos on Twitter/X, and the distinct visual style (motion blur, smooth cursor, wallpaper background) made the content stand out, serving as a viral watermark.",
+      "mvp_features": [
+        "High-DPI screen recording (60fps)",
+        "Automatic cursor tracking",
+        "Heuristic 'auto-zoom' on clicks",
+        "Cursor smoothing (removing jitter)",
+        "Motion blur rendering"
+      ],
+      "skip_features": [
+        "Complex video editing timeline (keep it simple)",
+        "Cloud hosting (start with local export)",
+        "Team collaboration tools"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://screen.studio/",
+        "https://www.starterstory.com/screen-studio-breakdown",
+        "https://twitter.com/pie6k",
+        "https://efficient.app/apps/screen-studio",
+        "https://stackshare.io/stackups/electron-vs-swift"
+      ]
+    },
+    {
+      "name": "FocuSee",
+      "developer": "Adam Pietrasiak (Timpler)",
+      "category": "Video Design / Screen Recording",
+      "revenue_estimate": "~$30,000 - $50,000/month",
+      "downloads_estimate": "8,000+ paid customers",
+      "rating": 4.8,
+      "clone_difficulty": 4,
+      "opportunity_score": 0.0,
+      "hook_feature": "Automatic 'Cinematic' Editing",
+      "differentiation_angle": "It turns a boring screen recording into a high-production 'promo' video automatically by smoothing cursor jitters and auto-zooming on clicks. It targets 'design' quality rather than just 'utility' recording.",
+      "why_viral": "The output videos look so distinctive and high-quality that users (designers, founders) naturally share them on Twitter/X, creating a viral loop where people ask 'What tool did you use?'",
+      "mvp_features": [
+        "High-resolution screen capture (60fps)",
+        "Automatic cursor smoothing (bezier curves)",
+        "Auto-zoom on mouse clicks",
+        "Motion blur rendering",
+        "Background wallpaper padding"
+      ],
+      "skip_features": [
+        "Cloud hosting (keep it local first)",
+        "Team collaboration",
+        "Complex non-linear editing tools"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://screen.studio/",
+        "https://www.starterstory.com/screen-studio-breakdown",
+        "https://efficient.app/apps/screen-studio",
+        "https://www.producthunt.com/products/screen-studio",
+        "https://stackshare.io/stackups/electron-vs-swift"
+      ]
+    },
+    {
+      "name": "Hand Mirror",
+      "developer": "Adam Pietrasiak (Indie Developer)",
+      "category": "Video / Screen Recording",
+      "revenue_estimate": "$30,000+/month (Oct 2024 estimate)",
+      "downloads_estimate": "8,000+ paid customers",
+      "rating": 4.8,
+      "clone_difficulty": 4,
+      "opportunity_score": 0.0,
+      "hook_feature": "Automatic 'Cinematic' Zoom & Smooth Cursor",
+      "differentiation_angle": "Automatically turns boring, jittery screen recordings into high-production-value promo videos by smoothing the mouse and zooming in on clicks without manual editing.",
+      "why_viral": "The 'What tool is that?' effect. Early users (designers/founders) posted stunning demos on Twitter/X. The unique visual style (smooth zooming, wallpaper padding) was instantly recognizable, prompting others to ask and buy.",
+      "mvp_features": [
+        "High-DPI screen recording",
+        "Automatic cursor smoothing (remove jitter)",
+        "Auto-zoom on mouse clicks",
+        "Background wallpaper padding (aesthetic spacing)",
+        "Motion blur toggle"
+      ],
+      "skip_features": [
+        "Cloud hosting (let users export to MP4 first)",
+        "Team collaboration features",
+        "Complex non-linear editing (keep it simple)"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://screen.studio/",
+        "https://www.starterstory.com/screen-studio-breakdown",
+        "https://twitter.com/pie6k",
+        "https://www.producthunt.com/products/screen-studio"
+      ]
+    },
+    {
+      "name": "Cursorful",
+      "developer": "Adam Pietrasiak (Timpler)",
+      "category": "Video / Productivity",
+      "revenue_estimate": "~$30,000+/month (Oct 2024 estimate)",
+      "downloads_estimate": "8,000+ paid customers",
+      "rating": 4.8,
+      "clone_difficulty": 4,
+      "opportunity_score": 0.0,
+      "hook_feature": "Automatic 'Cinematic' Zoom",
+      "differentiation_angle": "Zero-editing professional demos",
+      "why_viral": "Twitter/X 'Build in Public' & High-Status Aesthetics",
+      "mvp_features": [
+        "Auto-zoom on click",
+        "Smooth cursor animation",
+        "Motion blur",
+        "Mac-style background padding"
+      ],
+      "skip_features": [
+        "Cloud hosting (initially)",
+        "Team collaboration tools",
+        "Complex non-linear editing"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://screen.studio/",
+        "https://www.starterstory.com/screen-studio-breakdown",
+        "https://twitter.com/pie6k",
+        "https://stackshare.io/stackups/electron-vs-swift",
+        "https://www.producthunt.com/products/screen-studio"
+      ]
+    },
+    {
+      "name": "ScreenSnap Pro",
+      "developer": "Adam Pietrasiak (Timpler)",
+      "category": "Screen Recording / Video Editing",
+      "revenue_estimate": "~$30k/month (Oct 2024), likely $40k+ now",
+      "downloads_estimate": "8,000+ paid customers",
+      "rating": 4.8,
+      "clone_difficulty": 4,
+      "opportunity_score": 0.0,
+      "hook_feature": "Automatic 'cinematic' zoom that follows your cursor without manual editing",
+      "differentiation_angle": "Focus on high-design aesthetics (smooth cursor, motion blur, wallpaper padding) rather than utility. It turns a boring screen capture into a 'promo video' automatically.",
+      "why_viral": "The output videos look so distinctive and high-quality that they act as viral ads for the tool itself. Influencers and indie hackers on X (Twitter) adopted it to showcase their own apps, creating a loop where 'using Screen Studio' became a status signal for quality.",
+      "mvp_features": [
+        "High-quality screen capture (4k/60fps)",
+        "Automatic cursor tracking",
+        "Auto-zoom algorithm (zooms in on clicks/typing)",
+        "Cursor smoothing (removes jitter)",
+        "Motion blur rendering",
+        "Selfie/Webcam overlay with auto-zoom-out"
+      ],
+      "skip_features": [
+        "Complex non-linear editing timeline (keep it simple)",
+        "Cloud hosting (initially)",
+        "Team collaboration features"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://screen.studio/",
+        "https://www.starterstory.com/screen-studio-breakdown",
+        "https://twitter.com/pie6k",
+        "https://efficient.app/apps/screen-studio"
+      ]
+    },
+    {
+      "name": "Phia",
+      "developer": "Adam Pietrasiak",
+      "category": "Video / Screen Recording",
+      "revenue_estimate": "~$30,000 - $50,000/month",
+      "downloads_estimate": "8,000+ paid customers",
+      "rating": 4.8,
+      "clone_difficulty": 2,
+      "opportunity_score": 0.0,
+      "hook_feature": "Automatic Cinematic Zoom & Smooth Cursor",
+      "differentiation_angle": "It treats a screen recording like a 3D environment\u2014automatically smoothing jittery mouse movements, adding motion blur, and zooming in on clicks without manual editing.",
+      "why_viral": "Visual 'Wow' Factor + Build-in-Public. The output videos look professionally edited (like an Apple commercial) with zero effort. Early adopters (designers/founders) shared their demos on Twitter, creating a viral loop where the medium (the video style) was as impressive as the content.",
+      "mvp_features": [
+        "Electron-based capture",
+        "Automatic cursor smoothing (Bezier curves)",
+        "Auto-zoom on mouse click events",
+        "Motion blur rendering",
+        "Background wallpaper padding"
+      ],
+      "skip_features": [
+        "Cloud hosting/sharing (keep it local first)",
+        "Complex video editing (trimming is enough)",
+        "Team collaboration tools"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://www.starterstory.com/screen-studio-breakdown",
+        "https://screen.studio/",
+        "https://stackshare.io/stackups/electron-vs-swift",
+        "https://www.highsignal.io/screenstudio-wins-product-of-the-year-2/"
+      ]
+    },
+    {
+      "name": "Screen Frame Maker",
+      "developer": "Adam Pietrasiak (Timpler)",
+      "category": "Screen Recording / Video Editing",
+      "revenue_estimate": "$30,000 - $50,000/month",
+      "downloads_estimate": "8,000+ paid customers (Oct 2024 data)",
+      "rating": 4.8,
+      "clone_difficulty": 4,
+      "opportunity_score": 0.0,
+      "hook_feature": "Automatic 'Cinematic' Zoom",
+      "differentiation_angle": "It turns a boring screen recording into a high-production promo video automatically. The 'magic' is that it records metadata (clicks, cursor position) separately from the video, allowing it to re-render the video with smooth zooms and motion blur *after* the fact, without manual keyframing.",
+      "why_viral": "The output looks distinctively 'expensive' and 'high-effort.' When creators shared these videos on Twitter/X, viewers immediately asked 'How did you edit that?', creating a natural viral loop. The founder leveraged #buildinpublic to turn this curiosity into a cult following.",
+      "mvp_features": [
+        "Cursor Smoothing (removes jitter)",
+        "Auto-Zoom on Click (zooms in when user clicks)",
+        "Motion Blur (simulated during export)",
+        "Wallpaper Padding (adds a clean background behind the window)",
+        "Separate Track Recording (Webcam + Screen stored separately)"
+      ],
+      "skip_features": [
+        "Cloud Hosting (users prefer local export)",
+        "Complex Non-Linear Editing (keep it simple)",
+        "Team Collaboration (not essential for MVP)"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://screen.studio/",
+        "https://www.starterstory.com/screen-studio-breakdown",
+        "https://stackshare.io/stackups/electron-vs-swift",
+        "https://twitter.com/pie6k"
+      ]
+    },
+    {
+      "name": "Canvid",
+      "developer": "Adam Pietrasiak (Timpler)",
+      "category": "Video Design / Screen Recording",
+      "revenue_estimate": "~$30,000 - $50,000/month",
+      "downloads_estimate": "8,000+ paid customers",
+      "rating": 4.8,
+      "clone_difficulty": 4,
+      "opportunity_score": 0.0,
+      "hook_feature": "Auto-Zoom",
+      "differentiation_angle": "Automated cinematography",
+      "why_viral": "The 'How did you make that?' effect",
+      "mvp_features": [
+        "Automatic cursor tracking",
+        "Smart zoom on clicks",
+        "Smooth cursor animation (removing jitter)",
+        "Motion blur rendering",
+        "Background wallpaper padding"
+      ],
+      "skip_features": [
+        "Cloud hosting (initially)",
+        "Team collaboration",
+        "Complex video editing timeline (keep it simple)"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://www.starterstory.com/screen-studio-breakdown",
+        "https://screen.studio/",
+        "https://twitter.com/pie6k",
+        "https://www.producthunt.com/products/screen-studio"
+      ]
+    },
+    {
+      "name": "Tight Studio",
+      "developer": "Adam Pietrasiak (Timpler)",
+      "category": "Video / Screen Recording",
+      "revenue_estimate": "~$30,000 - $50,000/month",
+      "downloads_estimate": "8,000+ paid customers",
+      "rating": 4.8,
+      "clone_difficulty": 3,
+      "opportunity_score": 0.0,
+      "hook_feature": "Automatic 'Cinematic' Zoom",
+      "differentiation_angle": "It automates the high-end editing process (zooming, cursor smoothing, motion blur) that usually takes hours in After Effects, making boring screen captures look like high-production promos instantly.",
+      "why_viral": "The 'Apple-style' aesthetic of the videos it produces became a status symbol on Twitter/X. Creators shared their demos, viewers asked 'how did you edit that?', and the viral loop began. The founder also leveraged #BuildInPublic heavily.",
+      "mvp_features": [
+        "Screen recording with metadata (cursor position, clicks)",
+        "Automatic zoom-in on click events",
+        "Cursor smoothing algorithm (B\u00e9zier curves)",
+        "Motion blur rendering",
+        "Background wallpaper padding"
+      ],
+      "skip_features": [
+        "Cloud hosting/sharing (users prefer export to MP4)",
+        "Team collaboration features (not MVP)",
+        "Complex video editing timeline (keep it simple)"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://www.starterstory.com/screen-studio-breakdown",
+        "https://screen.studio/",
+        "https://twitter.com/pie6k",
+        "https://www.producthunt.com/products/screen-studio"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "name": "Viral Artifact Marketing",
+      "description": "The product's output is distinctive enough to act as a watermark/advertisement for the tool itself.",
+      "examples": [
+        "Screen Studio's smooth zoom and wallpaper padding are instantly recognizable on Twitter/X",
+        "Users asking 'What tool did you use?' creates a natural viral loop"
+      ],
+      "how_to_apply": "Design your export/shareable content to have a unique visual signature (e.g., specific background padding, motion blur style) that signals high status."
+    },
+    {
+      "name": "The 'Lazy Pro' Value Prop",
+      "description": "Automating high-skill tasks for professionals who have money but no time.",
+      "examples": [
+        "Automating manual After Effects keyframing (zooming/panning)",
+        "Smoothing mouse jitter automatically via algorithm"
+      ],
+      "how_to_apply": "Identify a workflow that usually requires professional editing skills (like video keyframing) and automate it with heuristics/defaults."
+    },
+    {
+      "name": "Metadata-Driven Rendering",
+      "description": "Recording data events (clicks, cursor coordinates) separately from video pixels to allow for post-processing magic.",
+      "examples": [
+        "Cursor smoothing is possible because the app records the path and re-renders it using Bezier curves",
+        "Auto-zoom works because the app logs 'click' events as metadata timestamps"
+      ],
+      "how_to_apply": "Don't just record pixels; record the underlying state/events to allow for non-destructive, 'magical' editing later."
+    },
+    {
+      "name": "Electron Performance Arbitrage",
+      "description": "Using web technologies (Electron) for high-performance tools to speed up development, contradicting the belief that native code is required.",
+      "examples": [
+        "Screen Studio runs on Electron but feels native due to optimization",
+        "Leverages Node native modules for heavy lifting (FFmpeg) while keeping UI simple"
+      ],
+      "how_to_apply": "Use Electron/Web tech for MVP speed, even for media apps, but optimize the heavy rendering processes."
+    },
+    {
+      "name": "High-Status Aesthetics",
+      "description": "Selling the 'Apple Commercial' look rather than utility features.",
+      "examples": [
+        "Motion blur usage makes 60fps look 'cinematic'",
+        "Wallpaper padding turns irregular window sizes into uniform 16:9 content"
+      ],
+      "how_to_apply": "Focus UI/UX on 'beautiful defaults' rather than customization options. Users pay for the 'expensive look'."
+    }
+  ],
+  "gaps": [
+    "No dominant Windows equivalent (Screen Studio is macOS only)",
+    "Subscription fatigue (Users want lifetime pricing for utility tools)",
+    "Web-based/Cloud versions (Current leaders are desktop-only installs)"
+  ],
+  "best_opportunities": {}
+}

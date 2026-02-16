@@ -1,6 +1,42 @@
 import os
+from typing import List, Optional
 from langchain_core.tools import tool
+from pydantic import BaseModel, Field
 from tavily import TavilyClient
+
+
+# =============================================================================
+# OUTPUT SCHEMAS
+# These define the structure for agent outputs via tool calls
+# =============================================================================
+
+class DiscoveredApp(BaseModel):
+    """Schema for an app discovered during research."""
+    name: str = Field(description="The app name")
+    developer: str = Field(default="", description="Developer or company name")
+    category: str = Field(default="", description="App category")
+    description: str = Field(default="", description="What the app does")
+    why_interesting: str = Field(default="", description="Why this app is worth researching")
+    source_url: str = Field(default="", description="URL where you found this app")
+
+
+class AppResearch(BaseModel):
+    """Schema for deep research on a single app."""
+    name: str = Field(description="The app name")
+    developer: str = Field(default="", description="Developer or company name")
+    category: str = Field(default="", description="App category")
+    revenue_estimate: str = Field(default="unknown", description="Revenue estimate e.g. '$50K/month'")
+    downloads_estimate: str = Field(default="unknown", description="Download estimate e.g. '100K+'")
+    rating: Optional[float] = Field(default=None, description="App store rating")
+    hook_feature: str = Field(default="", description="The killer feature that makes users choose this")
+    differentiation_angle: str = Field(default="", description="How a clone could differentiate")
+    why_viral: str = Field(default="", description="Why/how it went viral")
+    growth_strategy: str = Field(default="", description="How they acquired users")
+    clone_difficulty: int = Field(default=3, description="1-5 scale, 1=easy 5=hard")
+    mvp_features: List[str] = Field(default_factory=list, description="Must-have features for MVP")
+    skip_features: List[str] = Field(default_factory=list, description="Features to skip in clone")
+    clone_lessons: str = Field(default="", description="Key insight for building a competitor")
+    sources: List[str] = Field(default_factory=list, description="URLs where you found this info")
 
 
 # Lazy initialization to avoid errors when API key isn't set yet
@@ -172,6 +208,28 @@ def social_buzz_search(app_name: str) -> str:
 
 
 # =============================================================================
+# OUTPUT TOOLS
+# These tools are used to capture structured output from agents
+# The tools themselves do nothing - we just extract the args
+# =============================================================================
+
+@tool
+def submit_discovered_apps(apps: List[DiscoveredApp]) -> str:
+    """Submit the indie apps you discovered. Call this ONLY when you are done
+    searching and have found 8+ indie apps worth researching. Pass all the apps
+    you found with their details."""
+    return f"Recorded {len(apps)} apps"
+
+
+@tool
+def submit_app_research(research: AppResearch) -> str:
+    """Submit your research findings for this app. Call this when you have
+    gathered enough information about the app's revenue, features, growth
+    strategy, and clone potential."""
+    return f"Research recorded for {research.name}"
+
+
+# =============================================================================
 # TOOL COLLECTIONS
 # Different sets of tools for different agent types
 # =============================================================================
@@ -184,6 +242,7 @@ DISCOVERY_TOOLS = [
     web_search,
     app_store_search,
     product_hunt_search,
+    submit_discovered_apps,  # Output tool
 ]
 
 # Deep research phase tools - detailed info on specific apps
@@ -192,6 +251,7 @@ DEEP_RESEARCH_TOOLS = [
     app_store_search,
     estimate_app_revenue,
     social_buzz_search,
+    submit_app_research,  # Output tool
 ]
 
 # All available tools

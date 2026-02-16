@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Gold standard dataset for ALPHY evaluation",
+  "version": "1.0",
+  "created": "2026-02-16",
+  "pass_thresholds": {
+    "min_apps": 6,
+    "max_hallucinations": 0,
+    "max_broken_links": 1,
+    "min_relevance_pct": 80
+  },
+  "runs": [
+    {
+      "id": "run_001",
+      "input_category": "AI Photo/Video",
+      "run_date": "2026-02-16",
+      "output_file": "alphy/02-16-26-alphy-ai-photo-video.md",
+      "pass": null,
+      "failure_reasons": [],
+      "labeled_apps": [
+        {
+          "name": "Example App Name",
+          "url": "https://apps.apple.com/app/example",
+          "exists": true,
+          "cited": true,
+          "relevant": true,
+          "recent": true,
+          "indie": true,
+          "opportunity_quality": "high",
+          "notes": "Optional notes about this app"
+        }
+      ],
+      "summary": {
+        "total_apps": 0,
+        "apps_exist": 0,
+        "apps_cited": 0,
+        "apps_relevant": 0,
+        "apps_recent": 0,
+        "apps_indie": 0,
+        "hallucinations": 0,
+        "broken_links": 0
+      },
+      "labeler_notes": "Any observations about this run"
+    }
+  ],
+  "_template_app": {
+    "name": "string - app name as listed in report",
+    "url": "string - source URL from report (or null if not cited)",
+    "exists": "bool - did you verify this app exists?",
+    "cited": "bool - was a working URL provided?",
+    "relevant": "bool - does it fit the input category?",
+    "recent": "bool - updated within last 12 months?",
+    "indie": "bool - not owned by Big Tech (Meta, Google, Apple, Amazon, Microsoft, ByteDance)?",
+    "opportunity_quality": "high | medium | low | null - is this actually clonable?",
+    "notes": "string - optional context"
+  },
+  "_failure_reason_options": [
+    "insufficient_apps",
+    "hallucinated_apps",
+    "broken_links",
+    "irrelevant_apps",
+    "stale_apps",
+    "no_indie_apps"
+  ]
+}

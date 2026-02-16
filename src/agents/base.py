@@ -1,10 +1,10 @@
 import os
 import logging
-from typing import List, Optional, Any, Callable
+from typing import List, Optional, Any, Callable, Union
 from dataclasses import dataclass
-from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import SystemMessage, HumanMessage, BaseMessage
-from config.settings import get_model_id
+from langchain_core.language_models import BaseChatModel
+from config.settings import get_model_id, get_provider, VERTEX_PROJECT_ID, VERTEX_REGION
 
 # -----------------------------------------------------------------------------
 # Logger Setup
@@ -20,6 +20,7 @@ def setup_logger(name: str = "agents", level: int = logging.INFO) -> logging.Log
         return logger
 
     logger.setLevel(level)
+    logger.propagate = False  # prevent duplicate logs from root logger
 
     # create stdout handler
     handler = logging.StreamHandler()
@@ -83,10 +84,8 @@ def print_markdown(text: str, title: str = None) -> None:
 # -----------------------------------------------------------------------------
 # extract_text_content - helper to get plain text from LLM responses
 #
-# Gemini sometimes returns structured content blocks like:
-#   [{'type': 'text', 'text': '...', 'extras': {'signature': '...'}}]
-#
-# This function extracts just the text, handling both string and list formats.
+# LLMs sometimes return structured content blocks. This function extracts
+# just the text, handling both string and list formats.
 # -----------------------------------------------------------------------------
 def extract_text_content(content) -> str:
     """
@@ -127,18 +126,59 @@ class AgentResponse:
 
 # -----------------------------------------------------------------------------
 # create_llm - factory function for creating LLM client
-# kept separate so it can be used standalone if needed
+#
+# Supports multiple providers:
+#   - "vertex": Claude on Vertex AI (default)
+#   - "gemini": Google Gemini
 # -----------------------------------------------------------------------------
+_llm_banner_shown = False
+
 def create_llm(
-    model: str = "gemini-3-pro",
+    model: str = "claude-opus",
     tools: Optional[List[Callable]] = None,
-) -> ChatGoogleGenerativeAI:
+) -> BaseChatModel:
+    """
+    Create an LLM client based on the configured provider.
+
+    Args:
+        model: Model name (will be mapped to actual model ID)
+        tools: Optional list of tools to bind
+
+    Returns:
+        LangChain chat model instance
+    """
+    global _llm_banner_shown
+    provider = get_provider()
     model_id = get_model_id(model)
 
-    llm = ChatGoogleGenerativeAI(
-        model=model_id,
-        google_api_key=os.environ.get("GEMINI_API_KEY"),
-    )
+    # Show provider info once at startup
+    if not _llm_banner_shown:
+        print(f"\n{'='*60}")
+        print(f"🤖 LLM PROVIDER: {provider.upper()}")
+        print(f"📦 MODEL: {model_id}")
+        if provider == "vertex":
+            print(f"🌍 REGION: {VERTEX_REGION}")
+            print(f"📁 PROJECT: {VERTEX_PROJECT_ID}")
+        print(f"{'='*60}\n")
+        _llm_banner_shown = True
+
+    if provider == "vertex":
+        # Claude on Vertex AI (via Google's Model Garden)
+        from langchain_google_vertexai.model_garden import ChatAnthropicVertex
+
+        llm = ChatAnthropicVertex(
+            model_name=model_id,
+            project=VERTEX_PROJECT_ID,
+            location=VERTEX_REGION,
+        )
+    else:
+        # Google Gemini (fallback)
+        from langchain_google_genai import ChatGoogleGenerativeAI
+
+        llm = ChatGoogleGenerativeAI(
+            model=model_id,
+            google_api_key=os.environ.get("GEMINI_API_KEY"),
+        )
 
     if tools:
         llm = llm.bind_tools(tools)
@@ -206,10 +246,7 @@ class Agent:
             messages = existing_messages
 
         # call the LLM
-        logger.debug(f"[{self.name}] calling LLM...")
         response = await self.llm.ainvoke(messages)
-        logger.info(f"[{self.name}] LLM response type: {type(response)}")
-        logger.info(f"[{self.name}] LLM response attrs: {[a for a in dir(response) if not a.startswith('_')]}")
 
         # build the new message list
         if is_first_call:
@@ -226,11 +263,7 @@ class Agent:
             logger.info(f"[{self.name}] requesting tools: {tool_names}")
 
         # get content (might be empty string if tool call)
-        # use helper to extract text from structured content blocks
-        logger.info(f"[{self.name}] raw response.content type: {type(response.content)}")
-        logger.info(f"[{self.name}] raw response.content: {repr(response.content)[:500]}")
         content = extract_text_content(response.content)
-        logger.info(f"[{self.name}] extracted content length: {len(content)}")
 
         if not has_tool_calls:
             # truncate content for logging

@@ -26,7 +26,7 @@ class AgentConfig:
 # =============================================================================
 PLANNER_AGENT = AgentConfig(
     name="planner",
-    model="gemini-3-pro",
+    model="claude-opus",
     tools=[],
     timeout_seconds=60,
     system_prompt=(
@@ -79,7 +79,7 @@ PLANNER_AGENT = AgentConfig(
 # =============================================================================
 DISCOVERY_RESEARCHER = AgentConfig(
     name="discovery_researcher",
-    model="gemini-3-pro",
+    model="claude-opus",
     tools=DISCOVERY_TOOLS,
     timeout_seconds=300,
     system_prompt=(
@@ -122,27 +122,19 @@ DISCOVERY_RESEARCHER = AgentConfig(
         "1. Execute searches using the web_search, app_store_search, or product_hunt_search tools\n"
         "2. After EACH search, analyze the results to identify indie apps\n"
         "3. Keep searching until you have found 8-10 promising indie apps\n"
-        "4. Once you have enough apps, output your findings in JSON format\n\n"
+        "4. Once you have enough apps, call the submit_discovered_apps tool with your findings\n\n"
 
-        "OUTPUT FORMAT (only after you have found enough apps):\n"
-        "```json\n"
-        "[\n"
-        "  {\n"
-        "    \"name\": \"AppName\",\n"
-        "    \"developer\": \"Developer Name\",\n"
-        "    \"category\": \"category\",\n"
-        "    \"description\": \"What it does\",\n"
-        "    \"why_interesting\": \"Why this is worth researching\",\n"
-        "    \"source_url\": \"https://example.com/where-you-found-this\"\n"
-        "  }\n"
-        "]\n"
-        "```\n\n"
+        "SUBMITTING YOUR FINDINGS:\n"
+        "When you have found 8+ indie apps, call the submit_discovered_apps tool.\n"
+        "Pass an array of apps with: name, developer, category, description, why_interesting, source_url\n"
+        "Do NOT output JSON as text - use the submit_discovered_apps tool instead.\n\n"
 
         "IMPORTANT RULES:\n"
         "1. Keep searching until you have 8+ apps. Don't stop after just one search.\n"
         "2. ONLY report apps that you ACTUALLY found in search results - do NOT invent or hallucinate app names.\n"
         "3. Include the source URL where you found each app.\n"
-        "4. If you can't find real apps, say so - don't make them up."
+        "4. If you can't find real apps, say so - don't make them up.\n"
+        "5. ALWAYS use submit_discovered_apps tool to submit your findings - never output raw JSON."
     )
 )
 
@@ -153,7 +145,7 @@ DISCOVERY_RESEARCHER = AgentConfig(
 # =============================================================================
 DEEP_RESEARCHER = AgentConfig(
     name="deep_researcher",
-    model="gemini-3-pro",
+    model="claude-opus",
     tools=DEEP_RESEARCH_TOOLS,
     timeout_seconds=480,
     system_prompt=(
@@ -195,30 +187,17 @@ DEEP_RESEARCHER = AgentConfig(
         "You will be provided with queries already executed for this app.\n"
         "DON'T repeat those searches - build on what you've learned.\n\n"
 
-        "OUTPUT FORMAT:\n"
-        "After gathering data, provide a comprehensive summary:\n"
-        "```json\n"
-        "{\n"
-        "  \"name\": \"AppName\",\n"
-        "  \"developer\": \"Developer\",\n"
-        "  \"category\": \"category\",\n"
-        "  \"revenue_estimate\": \"$X-Y/month or 'unknown'\",\n"
-        "  \"downloads_estimate\": \"X+ downloads\",\n"
-        "  \"rating\": 4.5,\n"
-        "  \"hook_feature\": \"The killer feature\",\n"
-        "  \"differentiation_angle\": \"How to differentiate a clone\",\n"
-        "  \"why_viral\": \"Growth story\",\n"
-        "  \"growth_strategy\": \"How they acquired users\",\n"
-        "  \"clone_difficulty\": 3,\n"
-        "  \"mvp_features\": [\"feature1\", \"feature2\"],\n"
-        "  \"skip_features\": [\"not essential\", \"too complex\"],\n"
-        "  \"clone_lessons\": \"Key insight for building a competitor\",\n"
-        "  \"sources\": [\"url1\", \"url2\"]\n"
-        "}\n"
-        "```\n\n"
+        "SUBMITTING YOUR RESEARCH:\n"
+        "After gathering enough data, call the submit_app_research tool with your findings.\n"
+        "Pass a research object with: name, developer, category, revenue_estimate, downloads_estimate,\n"
+        "rating, hook_feature, differentiation_angle, why_viral, growth_strategy, clone_difficulty,\n"
+        "mvp_features, skip_features, clone_lessons, sources.\n"
+        "Do NOT output JSON as text - use the submit_app_research tool instead.\n\n"
 
-        "IMPORTANT: Only report facts you found in search results. Include source URLs. "
-        "If you cannot find specific data (revenue, downloads), say 'unknown' - do not guess."
+        "IMPORTANT:\n"
+        "1. Only report facts you found in search results. Include source URLs.\n"
+        "2. If you cannot find specific data (revenue, downloads), say 'unknown' - do not guess.\n"
+        "3. ALWAYS use submit_app_research tool to submit your findings - never output raw JSON."
     )
 )
 
@@ -229,7 +208,7 @@ DEEP_RESEARCHER = AgentConfig(
 # =============================================================================
 REFLECTION_AGENT = AgentConfig(
     name="reflection",
-    model="gemini-3-pro",
+    model="claude-opus",
     tools=[],
     timeout_seconds=60,
     system_prompt=(
@@ -271,7 +250,7 @@ REFLECTION_AGENT = AgentConfig(
 # =============================================================================
 PATTERN_EXTRACTOR = AgentConfig(
     name="pattern_extractor",
-    model="gemini-3-pro",
+    model="claude-opus",
     tools=[],
     timeout_seconds=120,
     system_prompt=(
@@ -321,7 +300,7 @@ PATTERN_EXTRACTOR = AgentConfig(
 # =============================================================================
 SYNTHESIS_AGENT = AgentConfig(
     name="synthesis",
-    model="gemini-3-pro",
+    model="claude-opus",
     tools=[],
     timeout_seconds=180,
     system_prompt=(
@@ -387,7 +366,7 @@ SYNTHESIS_AGENT = AgentConfig(
 # =============================================================================
 USER_COMMUNICATOR = AgentConfig(
     name='user_communicator',
-    model='gemini-3-pro',
+    model='claude-opus',
     tools=[],
     timeout_seconds=120,
     system_prompt=(
@@ -412,7 +391,7 @@ USER_COMMUNICATOR = AgentConfig(
 
 APP_TRENDS_ANALYZER = AgentConfig(
     name='app_trends_analyzer',
-    model='gemini-3-pro',
+    model='claude-opus',
     tools=RESEARCH_TOOLS,
     timeout_seconds=480,
     system_prompt=(

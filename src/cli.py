@@ -37,16 +37,16 @@ ALPHY_BANNER = """
 # =============================================================================
 
 PRESET_CATEGORIES = [
-    "Productivity & Utilities",
-    "AI Photo/Video",
-    "Health & Fitness",
-    "Social & Dating",
-    "Casual Games",
-    "Finance & Crypto",
-    "Education",
-    "Food & Recipes",
-    "Travel",
-    "Music & Audio",
+    "AI Writing Tools",
+    "Developer Tools & Utilities",
+    "Personal Knowledge Management",
+    "Screenshot & Screen Recording",
+    "Habit & Routine Trackers",
+    "Journaling & Mental Wellness",
+    "Freelancer & Invoice Tools",
+    "No-Code & Automation",
+    "Focus & Distraction Blocking",
+    "Mac Menu Bar Utilities",
 ]
 
 

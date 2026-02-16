@@ -1,0 +1,483 @@
+{
+  "mode": "general",
+  "niche": "AI Writing Tools",
+  "run_date": "2026-02-16",
+  "opportunities": [
+    {
+      "name": "what ai writing tools are actually worth using in 2026?",
+      "developer": "Grammarly, Inc (rebranded as Superhuman)",
+      "category": "Writing Assistant / Productivity",
+      "revenue_estimate": "$700M ARR (2025), profitable",
+      "downloads_estimate": "40M+ daily active users, 10M+ Chrome extension downloads",
+      "rating": 4.7,
+      "clone_difficulty": 9,
+      "opportunity_score": 0.0,
+      "hook_feature": "Works seamlessly across 1M+ apps/websites without copy-paste. Real-time tone detection and GrammarlyGO generative rewrites.",
+      "differentiation_angle": "Ubiquity - keyboard/browser integration everywhere + #1 ranked AI detector for education",
+      "why_viral": "Freemium model creating massive word-of-mouth + enterprise B2B sales (50K+ organizations)",
+      "mvp_features": [
+        "Grammar/spelling check",
+        "Tone detection",
+        "Basic rewrites",
+        "Browser extension"
+      ],
+      "skip_features": [
+        "Enterprise SSO",
+        "Brand voice training",
+        "Plagiarism checker",
+        "AI detector"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://sacra.com/c/grammarly/",
+        "https://electroiq.com/stats/grammarly-ai-statistics/",
+        "https://apps.apple.com/us/app/grammarly-ai-writing-keyboard/id1158877342"
+      ]
+    },
+    {
+      "name": "Best AI tools I have been using in 2026 : r/AIToolTesting",
+      "developer": "Grammarly, Inc. (rebranded as Superhuman Platform Inc.)",
+      "category": "AI Writing Keyboard / Grammar Assistant",
+      "revenue_estimate": "$700M ARR (2025)",
+      "downloads_estimate": "40+ million daily users, 10M+ Chrome downloads",
+      "rating": 4.7,
+      "clone_difficulty": 9,
+      "opportunity_score": 0.0,
+      "hook_feature": "Works everywhere you type - 1M+ apps/websites integration, AI keyboard that doesn't require copy/paste",
+      "differentiation_angle": "Ubiquitous presence + trusted brand. 15+ years of refinement. Enterprise security certifications. Works natively in all apps.",
+      "why_viral": "Freemium model with high-value free tier. Browser extension virality. Word-of-mouth from students and professionals.",
+      "mvp_features": [
+        "Real-time grammar/spelling",
+        "Browser extension",
+        "Keyboard integration",
+        "Tone detection",
+        "Basic rewrite suggestions"
+      ],
+      "skip_features": [
+        "Enterprise SSO",
+        "Team management",
+        "#1 AI detector",
+        "Brand voice governance"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://sacra.com/c/grammarly/",
+        "https://apps.apple.com/us/app/grammarly-ai-writing-keyboard/id1158877342",
+        "https://electroiq.com/stats/grammarly-ai-statistics/"
+      ]
+    },
+    {
+      "name": "What are the best AI tools of 2026 that you've actually used?",
+      "developer": "Grammarly, Inc (rebranded as Superhuman)",
+      "category": "Productivity / Writing Assistant",
+      "revenue_estimate": "$700M+ ARR (2025)",
+      "downloads_estimate": "40M+ daily active users, 206K+ App Store ratings",
+      "rating": 4.7,
+      "clone_difficulty": 9,
+      "opportunity_score": 0.0,
+      "hook_feature": "Works in 1M+ apps/websites as keyboard/browser extension - no copy-paste needed",
+      "differentiation_angle": "Ubiquitous availability across all platforms + AI rewrite + #1 ranked AI detector for education",
+      "why_viral": "Freemium model with 100 free AI prompts/month created massive adoption; early mover since 2009",
+      "mvp_features": [
+        "Grammar/spelling correction",
+        "Browser extension",
+        "Tone detection",
+        "Basic rewriting"
+      ],
+      "skip_features": [
+        "AI detector agent",
+        "Enterprise governance",
+        "500K+ app integrations",
+        "Brand voice training"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://sacra.com/c/grammarly/",
+        "https://electroiq.com/stats/grammarly-ai-statistics/",
+        "https://apps.apple.com/us/app/grammarly-ai-writing-keyboard/id1158877342",
+        "https://www.grammarly.com/blog/company/number-one-ai-detector/"
+      ]
+    },
+    {
+      "name": "Best AI Detection Tool In February 2026? : r/humanizing",
+      "developer": "Grammarly, Inc (now rebranded as Superhuman)",
+      "category": "Productivity/Writing Assistant",
+      "revenue_estimate": "$700M ARR (2025)",
+      "downloads_estimate": "30M+ daily active users, 40M+ total users",
+      "rating": 4.7,
+      "clone_difficulty": 9,
+      "opportunity_score": 0.0,
+      "hook_feature": "Works across 1M+ apps/websites with real-time grammar, tone, and AI rewrites - no copy/paste needed",
+      "differentiation_angle": "Ubiquitous presence across all platforms + enterprise-grade security + brand voice matching",
+      "why_viral": "Freemium model with high conversion; embedded in daily workflows since 2009",
+      "mvp_features": [
+        "Real-time grammar checking",
+        "Tone detection",
+        "Basic AI rewrites",
+        "Browser extension"
+      ],
+      "skip_features": [
+        "Enterprise SSO",
+        "Brand IQ",
+        "Plagiarism detection",
+        "#1 AI Detector ranking"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://sacra.com/c/grammarly/",
+        "https://electroiq.com/stats/grammarly-ai-statistics/",
+        "https://apps.apple.com/us/app/grammarly-ai-writing-keyboard/id1158877342"
+      ]
+    },
+    {
+      "name": "Google AI Tools 2026: The Hidden Stack That'll Save You ...",
+      "developer": "Grammarly, Inc (rebranding to Superhuman Platform Inc.)",
+      "category": "AI Writing Assistant / Grammar Checker",
+      "revenue_estimate": "$700M+ ARR (2025)",
+      "downloads_estimate": "30M+ daily active users, 40M+ total users, 206K+ iOS ratings",
+      "rating": 4.7,
+      "clone_difficulty": 9,
+      "opportunity_score": 0.0,
+      "hook_feature": "Works everywhere you write - across 1M+ apps and websites with real-time grammar, tone detection, and AI rewriting",
+      "differentiation_angle": "Ubiquitous presence (keyboard, browser extensions, integrations), brand trust built since 2009, enterprise-grade security, #1 ranked AI detector",
+      "why_viral": "Freemium model converted millions of free users over 15+ years; word-of-mouth from students and professionals",
+      "mvp_features": [
+        "Real-time grammar/spelling check",
+        "Tone detection",
+        "Basic AI rewriting",
+        "Browser extension",
+        "Mobile keyboard"
+      ],
+      "skip_features": [
+        "Plagiarism detection",
+        "Brand voice (enterprise)",
+        "AI detector",
+        "Full sentence rewrite with 2000+ prompts"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://sacra.com/c/grammarly/",
+        "https://apps.apple.com/us/app/grammarly-ai-writing-keyboard/id1158877342",
+        "https://electroiq.com/stats/grammarly-ai-statistics/",
+        "https://www.grammarly.com/"
+      ]
+    },
+    {
+      "name": "Best AI tools for standing out with content in 2026? Here's ...",
+      "developer": "Grammarly, Inc (rebranded as Superhuman)",
+      "category": "AI Writing Assistant / Productivity",
+      "revenue_estimate": "$700M ARR (2025)",
+      "downloads_estimate": "40M+ daily active users, 10M+ Chrome extension downloads, 206K+ App Store ratings",
+      "rating": 4.7,
+      "clone_difficulty": 9,
+      "opportunity_score": 0.0,
+      "hook_feature": "Real-time grammar, tone detection, and AI rewrites that work across 1M+ apps and websites",
+      "differentiation_angle": "#1 ranked AI detector for education; embedded keyboard that works everywhere without copy/paste",
+      "why_viral": "Freemium model created massive user base; B2B enterprise adoption drives revenue; trusted by 50,000+ organizations",
+      "mvp_features": [
+        "Grammar/spelling correction",
+        "Browser extension",
+        "Tone detection",
+        "Basic rewriting"
+      ],
+      "skip_features": [
+        "Enterprise SSO",
+        "Brand voice training",
+        "500k+ app integrations",
+        "AI detection"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://sacra.com/c/grammarly/",
+        "https://electroiq.com/stats/grammarly-ai-statistics/",
+        "https://apps.apple.com/us/app/grammarly-ai-writing-keyboard/id1158877342",
+        "https://www.grammarly.com/"
+      ]
+    },
+    {
+      "name": "The Biggest TikTok Trends of 2026",
+      "developer": "Grammarly, Inc. (recently rebranded as Superhuman Platform)",
+      "category": "AI Writing Assistant / Productivity",
+      "revenue_estimate": "$700M+ ARR (2025)",
+      "downloads_estimate": "40+ million daily active users, 206K App Store ratings",
+      "rating": 4.7,
+      "clone_difficulty": 5,
+      "opportunity_score": 0.0,
+      "hook_feature": "Works across 1 million+ apps/websites - keyboard replacement that provides grammar, tone, and AI rewriting everywhere you type",
+      "differentiation_angle": "Universal integration + enterprise-grade security + #1 ranked AI detector for academic integrity",
+      "why_viral": "Freemium model mastery - free version delivers real value, driving organic growth since 2009",
+      "mvp_features": [
+        "Grammar/spelling correction",
+        "Tone detection",
+        "AI rewriting",
+        "Browser extension",
+        "Mobile keyboard"
+      ],
+      "skip_features": [
+        "Enterprise SSO/admin features",
+        "Plagiarism checker",
+        "Brand voice training",
+        "500k+ app integrations"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://sacra.com/c/grammarly/",
+        "https://electroiq.com/stats/grammarly-ai-statistics/",
+        "https://apps.apple.com/us/app/grammarly-ai-writing-keyboard/id1158877342"
+      ]
+    },
+    {
+      "name": "All-in on AI: what TikTok creator ByteDance did next",
+      "developer": "Grammarly, Inc (now Superhuman Platform Inc.)",
+      "category": "AI Writing Assistant / Productivity",
+      "revenue_estimate": "$700M+ ARR (2025), ~$58M/month",
+      "downloads_estimate": "40M+ daily active users, 10M+ Chrome extension downloads",
+      "rating": 4.7,
+      "clone_difficulty": 9,
+      "opportunity_score": 0.0,
+      "hook_feature": "#1 AI Detector + works everywhere you write (500,000+ apps/sites)",
+      "differentiation_angle": "Ubiquitous keyboard/browser integration + brand voice customization + enterprise trust",
+      "why_viral": "Freemium model that converts well + embedded in every writing context",
+      "mvp_features": [
+        "Grammar/spelling check",
+        "Tone detection",
+        "Basic rewriting",
+        "Browser extension"
+      ],
+      "skip_features": [
+        "AI detector ranking #1",
+        "500K+ integrations",
+        "Enterprise governance",
+        "Brand voice training"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://sacra.com/c/grammarly/",
+        "https://apps.apple.com/us/app/grammarly-ai-writing-keyboard/id1158877342",
+        "https://electroiq.com/stats/grammarly-ai-statistics/",
+        "https://getlatka.com/blog/grammarly-revenue/"
+      ]
+    },
+    {
+      "name": "Best AI Writing Tools 2026",
+      "developer": "Grammarly, Inc (rebranded to Superhuman)",
+      "category": "AI Writing Assistant / Productivity",
+      "revenue_estimate": "$700M ARR (2025) - up from $251.8M in 2024",
+      "downloads_estimate": "40M+ daily active users, 206K+ App Store ratings",
+      "rating": 4.7,
+      "clone_difficulty": 5,
+      "opportunity_score": 0.0,
+      "hook_feature": "Works everywhere - keyboard/browser extension across 1M+ apps and websites with real-time grammar, tone, and AI rewriting",
+      "differentiation_angle": "Best-in-class omni-channel presence (works in ALL apps), #1 AI detector, enterprise-grade security, GrammarlyGO generative AI",
+      "why_viral": "Freemium model drove adoption - free version offers core value, paid unlocks advanced tone/rewrite features. Word-of-mouth from students/professionals.",
+      "mvp_features": [
+        "Real-time grammar/spelling",
+        "Tone detection",
+        "Basic rewriting",
+        "Browser extension",
+        "Mobile keyboard"
+      ],
+      "skip_features": [
+        "Enterprise SSO/compliance",
+        "Brand voice training",
+        "AI detector agent",
+        "Full 1M+ app integrations"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://sacra.com/c/grammarly/",
+        "https://electroiq.com/stats/grammarly-ai-statistics/",
+        "https://apps.apple.com/us/app/grammarly-ai-writing-keyboard/id1158877342",
+        "https://www.grammarly.com/"
+      ]
+    },
+    {
+      "name": "Best Ai App 2026",
+      "developer": "Grammarly, Inc (rebranded as Superhuman Platform Inc.)",
+      "category": "AI Writing Assistant / Productivity",
+      "revenue_estimate": "$700M ARR (2025)",
+      "downloads_estimate": "30M+ daily active users, 40M+ total users, 10M+ Chrome extension downloads",
+      "rating": 4.7,
+      "clone_difficulty": 9,
+      "opportunity_score": 0.0,
+      "hook_feature": "Works everywhere you write (1M+ apps/websites) with real-time grammar, tone detection, and GrammarlyGO AI rewriting",
+      "differentiation_angle": "Ubiquitous integration + #1 ranked AI detector for academic integrity",
+      "why_viral": "Freemium model with free grammar checking that hooks users; premium upsell for advanced features",
+      "mvp_features": [
+        "Grammar/spelling correction",
+        "Tone detection",
+        "Browser extension",
+        "Keyboard app"
+      ],
+      "skip_features": [
+        "Enterprise SSO/governance",
+        "Plagiarism detection",
+        "AI authorship detection"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://sacra.com/c/grammarly/",
+        "https://electroiq.com/stats/grammarly-ai-statistics/",
+        "https://apps.apple.com/us/app/grammarly-ai-writing-keyboard/id1158877342"
+      ]
+    },
+    {
+      "name": "AI SaaS Solo Founder Success Stories (2026)",
+      "developer": "Grammarly, Inc (Now rebranded as Superhuman)",
+      "category": "Writing Assistant / Grammar Correction",
+      "revenue_estimate": "$700M+ ARR (2025)",
+      "downloads_estimate": "30M+ daily active users, 40M+ total users",
+      "rating": 4.7,
+      "clone_difficulty": 9,
+      "opportunity_score": 0.0,
+      "hook_feature": "Works everywhere - 1M+ app/website integrations with real-time corrections + GrammarlyGO generative AI",
+      "differentiation_angle": "#1 AI detector ranked by RAID benchmark, enterprise-grade security, brand voice customization",
+      "why_viral": "Freemium model + ubiquitous browser extension + workplace adoption",
+      "mvp_features": [
+        "Grammar/spelling correction",
+        "Tone detection",
+        "Browser extension",
+        "Mobile keyboard"
+      ],
+      "skip_features": [
+        "500K+ app integrations",
+        "Enterprise SSO",
+        "AI detector",
+        "Brand voice training"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://sacra.com/c/grammarly/",
+        "https://electroiq.com/stats/grammarly-ai-statistics/",
+        "https://apps.apple.com/us/app/grammarly-ai-writing-keyboard/id1158877342"
+      ]
+    },
+    {
+      "name": "Impressive AI For Indie Authors In 2026",
+      "developer": "Grammarly, Inc (Now rebranded as Superhuman)",
+      "category": "AI Writing Assistant / Grammar & Style",
+      "revenue_estimate": "$700M ARR (2025)",
+      "downloads_estimate": "40M+ daily active users, 206K iOS ratings",
+      "rating": 4.7,
+      "clone_difficulty": 9,
+      "opportunity_score": 0.0,
+      "hook_feature": "Works in 1M+ apps - universal keyboard/extension that never breaks your flow",
+      "differentiation_angle": "Not just grammar - full AI rewrite, tone detection, brand voice matching, #1 AI detector",
+      "why_viral": "Freemium model with free grammar check \u2192 organic word of mouth; became standard tool for professionals",
+      "mvp_features": [
+        "Grammar/spelling check",
+        "Tone detection",
+        "AI rewrite suggestions",
+        "Chrome extension"
+      ],
+      "skip_features": [
+        "Enterprise governance",
+        "API integrations",
+        "AI detector agent",
+        "Custom style guide"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://sacra.com/c/grammarly/",
+        "https://apps.apple.com/us/app/grammarly-ai-writing-keyboard/id1158877342",
+        "https://electroiq.com/stats/grammarly-ai-statistics/"
+      ]
+    },
+    {
+      "name": "My 2026 Indie Journey: Why I built 3 different AI tools to ...",
+      "developer": "Grammarly, Inc (rebranded to Superhuman)",
+      "category": "Writing Assistant / Grammar Checker",
+      "revenue_estimate": "$700M ARR (2025), ~$58M/month",
+      "downloads_estimate": "40M+ daily active users, 206K App Store ratings",
+      "rating": 4.7,
+      "clone_difficulty": 5,
+      "opportunity_score": 0.0,
+      "hook_feature": "Works in 1M+ apps and websites - zero context switching. AI keyboard that integrates everywhere you write.",
+      "differentiation_angle": "Ubiquitous presence across every platform (mobile keyboard, browser extension, desktop app). Best AI detection tool (ranked #1 by RAID). Strong enterprise security and compliance.",
+      "why_viral": "Freemium model perfected over 15+ years. Started as grammar checker (2009), evolved into full AI writing assistant. Word-of-mouth + browser extension virality.",
+      "mvp_features": [
+        "Grammar/spelling check",
+        "Tone detection",
+        "Browser extension",
+        "Mobile keyboard"
+      ],
+      "skip_features": [
+        "Enterprise compliance",
+        "AI detection tool",
+        "500K+ app integrations"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://sacra.com/c/grammarly/",
+        "https://electroiq.com/stats/grammarly-ai-statistics/",
+        "https://apps.apple.com/us/app/grammarly-ai-writing-keyboard/id1158877342"
+      ]
+    },
+    {
+      "name": "2026 Author Trends You Need to Know",
+      "developer": "Grammarly, Inc (rebranded to Superhuman)",
+      "category": "AI Writing Assistant / Keyboard",
+      "revenue_estimate": "$700M+ ARR (2025)",
+      "downloads_estimate": "30M+ daily active users, 10M+ Chrome extension downloads, 206K+ iOS ratings",
+      "rating": 4.7,
+      "clone_difficulty": 9,
+      "opportunity_score": 0.0,
+      "hook_feature": "Real-time grammar, tone detection, and AI rewrites that work EVERYWHERE across 1M+ apps/websites",
+      "differentiation_angle": "Ubiquity - works as a keyboard/extension across all platforms; enterprise trust with 50K+ organizations; #1 ranked AI detector for academic use",
+      "why_viral": "Freemium model with viral word-of-mouth; strong B2B enterprise adoption; consistent product over 15+ years",
+      "mvp_features": [
+        "Grammar/spelling correction",
+        "Tone detection",
+        "AI rewrite suggestions",
+        "Browser extension",
+        "Mobile keyboard"
+      ],
+      "skip_features": [
+        "Enterprise SSO/compliance",
+        "Plagiarism checker",
+        "Custom brand voice training",
+        "AI detector"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://sacra.com/c/grammarly/",
+        "https://electroiq.com/stats/grammarly-ai-statistics/",
+        "https://apps.apple.com/us/app/grammarly-ai-writing-keyboard/id1158877342"
+      ]
+    },
+    {
+      "name": "The Best AI Tools for 2026",
+      "developer": "Grammarly, Inc (now rebranded as Superhuman)",
+      "category": "General Writing Assistant / Grammar & Style",
+      "revenue_estimate": "$700M ARR (2025)",
+      "downloads_estimate": "40M+ daily active users, 10M+ Chrome extension downloads",
+      "rating": 4.7,
+      "clone_difficulty": 9,
+      "opportunity_score": 0.0,
+      "hook_feature": "Works across 1M+ apps and websites seamlessly - no copy/paste required. Real-time grammar, tone detection, and GrammarlyGO generative AI that learns your voice",
+      "differentiation_angle": "15+ years of data advantage, freemium model with strong free tier, enterprise-grade security, works everywhere you type",
+      "why_viral": "Freemium model creates viral loop - free users recommend to others, organic word-of-mouth. Deep integration into daily writing workflows",
+      "mvp_features": [
+        "Real-time grammar/spelling",
+        "Tone detection",
+        "Browser extension",
+        "Basic rewrite suggestions"
+      ],
+      "skip_features": [
+        "Enterprise governance",
+        "AI detector",
+        "500K+ app integrations",
+        "Brand voice training"
+      ],
+      "trend_timing": "",
+      "sources": [
+        "https://sacra.com/c/grammarly/",
+        "https://electroiq.com/stats/grammarly-ai-statistics/",
+        "https://apps.apple.com/us/app/grammarly-ai-writing-keyboard/id1158877342"
+      ]
+    }
+  ],
+  "patterns": [],
+  "gaps": [],
+  "best_opportunities": {}
+}

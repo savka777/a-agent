@@ -85,13 +85,17 @@ def extract_json_from_response(content: str) -> Optional[Any]:
     """
     Extract JSON from LLM response that might contain markdown code blocks.
     """
+    import logging
+    logger = logging.getLogger("agents")
+
     # Try to find JSON in code blocks first
     json_match = re.search(r'```(?:json)?\s*([\s\S]*?)\s*```', content)
     if json_match:
         try:
             return json.loads(json_match.group(1))
-        except json.JSONDecodeError:
-            pass
+        except json.JSONDecodeError as e:
+            logger.warning(f"[json_extract] Code block JSON failed: {e}")
+            logger.debug(f"[json_extract] Attempted to parse: {json_match.group(1)[:200]}...")
 
     # Try to parse the whole content as JSON
     try:
@@ -105,9 +109,22 @@ def extract_json_from_response(content: str) -> Optional[Any]:
         if match:
             try:
                 return json.loads(match.group(0))
-            except json.JSONDecodeError:
+            except json.JSONDecodeError as e:
+                logger.debug(f"[json_extract] Pattern {pattern} failed: {e}")
                 continue
 
+    # Last resort: try to fix common LLM JSON issues
+    json_match = re.search(r'```(?:json)?\s*([\s\S]*?)\s*```', content)
+    if json_match:
+        json_str = json_match.group(1)
+        # Remove trailing commas before ] or }
+        json_str = re.sub(r',\s*([}\]])', r'\1', json_str)
+        try:
+            return json.loads(json_str)
+        except json.JSONDecodeError as e:
+            logger.warning(f"[json_extract] Even after cleanup, JSON failed: {e}")
+
+    logger.warning(f"[json_extract] No valid JSON found in response of length {len(content)}")
     return None
 
 
