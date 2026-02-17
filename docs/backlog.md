@@ -1,31 +1,62 @@
 # ALPHY Backlog
 
-## Completed
+## Current Focus: Architecture Refactor
 
-- [x] Fix `TAVILY_API_KEY not found` error - Added `load_dotenv()` to gold standard script
-- [x] Fix `compile_workflow` import error - Changed to `run_workflow` in gold standard script
-- [x] Clean up duplicate logs - Added `propagate=False` to logger setup
-- [x] Remove verbose log noise - Removed LLM response attrs, raw content dumps
-- [x] Make LLM banner show once - Added `_llm_banner_shown` flag
-- [x] Investigate why good apps (Grubby AI) were discarded - Found root cause: JSON parsing failed, fallback extracted article titles as app names
-- [x] Add JSON extraction logging - Added warnings to `extract_json_from_response`
-- [x] Refactor to tool-based structured output - Added `submit_discovered_apps` and `submit_app_research` tools
+See `docs/refactor-plan.md` for the full plan.
 
-## In Progress
+**Summary**: Replacing the rigid 6-agent pipeline with a supervisor + parallel workers architecture.
 
-- [ ] Test the refactored workflow with a single category
-- [ ] Run gold standard evaluations (10 categories)
+### Phase 0: MCP Validation Progress
 
-## Pending
+| MCP | Status | Documentation |
+|-----|--------|---------------|
+| App Store Scraper (appreply-co/mcp-appstore) | ✅ Validated | `docs/mcp/app-store-scraper.md` |
+| Product Hunt MCP (product-hunt-mcp) | ✅ Validated | `docs/mcp/product-hunt.md` |
+| Revenue MCP | ⏳ Not started | - |
 
-- [ ] Fix reflection loop - Currently detects problems (e.g., "all 15 apps are Grammarly") but doesn't properly retry with better queries
-- [ ] Manual labeling of gold standard apps in `scorers/gold_standard.json`
-- [ ] Integrate with Braintrust for regression testing
-- [ ] Add multi-provider support (let users paste API key and pick provider)
+### Why
+- Current pipeline is too rigid (linear flow)
+- Context is fragmented between agents
+- Reflection loop doesn't effectively retry
+- No conversational follow-up possible
+- User can't refine plan before execution
 
-## Future Considerations
+### New Architecture
+- **Supervisor agent**: Plans, delegates, evaluates, synthesizes
+- **Researcher workers**: Deep dive on individual apps (parallel)
+- **Conversational UI**: Claude Code-style CLI with /commands
+- **User in the loop**: See plan, approve/refine, continue conversation
 
+---
+
+## Completed (Pre-Refactor)
+
+- [x] Fix `TAVILY_API_KEY not found` error
+- [x] Fix `compile_workflow` import error
+- [x] Clean up duplicate logs
+- [x] Remove verbose log noise
+- [x] Make LLM banner show once
+- [x] Investigate Grammarly bug (JSON parsing failed, fallback extracted article titles)
+- [x] Add JSON extraction logging
+- [x] Refactor to tool-based structured output
+
+---
+
+## Archived (No Longer Relevant Post-Refactor)
+
+These were relevant to the old 6-agent pipeline:
+
+- [ ] ~~Fix reflection loop~~
+- [ ] ~~Run gold standard evaluations on 10 categories~~
+- [ ] ~~Manual labeling of gold standard apps~~
+
+---
+
+## Future Considerations (Post-Refactor)
+
+- [ ] Session persistence (resume research later)
 - [ ] DuckDuckGo fallback for when Tavily credits run out
-- [ ] Smarter app deduplication (fuzzy matching on names)
-- [ ] Rate limiting / retry logic for API calls
-- [ ] Parallel deep research (research multiple apps concurrently)
+- [ ] Smarter app deduplication (fuzzy matching)
+- [ ] Multi-provider support (let users pick LLM provider)
+- [ ] Context compaction (/compact command)
+- [ ] Export to multiple formats (md, json, pdf)

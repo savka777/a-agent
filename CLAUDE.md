@@ -6,31 +6,24 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ALPHY is a deep research AI agent for finding indie app clone opportunities. It performs multi-phase research using specialized agents to find trending apps, analyze their success factors, extract patterns, and produce actionable Reddit-post-quality reports for entrepreneurs.
 
-## Current Status
+**Task tracking:** See `docs/backlog.md` for current status, in-progress work, and pending tasks.
 
-**LLM Provider:** Claude Opus 4.5 via Vertex AI (switched from Gemini)
+## ⚠️ Architecture Refactor In Progress
 
-**Recently Completed:**
-- Refactored agent outputs to use tool-based structured output (no more JSON text parsing)
-- Fixed logging issues (duplicate logs, verbose noise)
-- Added `submit_discovered_apps` and `submit_app_research` output tools
-- Gold standard evaluation framework set up
+The project is transitioning from a rigid 6-agent pipeline to a **supervisor + parallel workers + MCP architecture**. See `docs/refactor-plan.md` for the full plan.
 
-**In Progress:** Testing refactored workflow and running gold standard evaluations
+**Current state:** Old 6-agent pipeline still in `src/`. Refactor introduces:
+- Supervisor agent (plans, delegates, synthesizes)
+- Parallel researcher workers (stateless, one task each)
+- MCP layer for real app data (App Store, Product Hunt, Revenue APIs)
+- Conversational CLI with /commands
 
-**Next Steps:**
-1. Test the refactored workflow with a single category
-2. Run gold standard evaluations: `uv run python scripts/run_gold_standard.py`
-3. Manually label apps in `scorers/gold_standard.json`
-4. Fix reflection loop (doesn't properly retry when research is insufficient)
-5. Integrate with Braintrust for regression testing
-
-**Backlog:** See `docs/backlog.md` for full task list
+When making changes, check if the code is in the old pipeline or new architecture.
 
 ## Commands
 
 ```bash
-# Install dependencies (required after model switch)
+# Install dependencies
 uv sync
 
 # Run the workflow (interactive mode)
@@ -80,24 +73,13 @@ TAVILY_API_KEY=your-tavily-key
 BRAINTRUST_API_KEY=your-braintrust-key
 ```
 
-## Preset Categories (Indie-Focused)
+## Preset Categories
 
-The 10 categories optimized for indie app opportunities:
+10 indie-focused categories are defined in `scripts/run_gold_standard.py`. Future candidates tracked in `docs/candidate_categories.md`.
 
-1. AI Writing Tools
-2. Developer Tools & Utilities
-3. Personal Knowledge Management
-4. Screenshot & Screen Recording
-5. Habit & Routine Trackers
-6. Journaling & Mental Wellness
-7. Freelancer & Invoice Tools
-8. No-Code & Automation
-9. Focus & Distraction Blocking
-10. Mac Menu Bar Utilities
+## Current Architecture (Pre-Refactor)
 
-Future candidates in `docs/candidate_categories.md`.
-
-## Architecture
+> **Note:** This documents the current 6-agent pipeline. See `docs/refactor-plan.md` for the target architecture.
 
 ### Core Flow (Deep Research)
 
@@ -140,56 +122,22 @@ init → planning → discovery ←→ discovery_tools
 
 ### LLM Provider Configuration
 
-The system supports multiple LLM providers via `src/config/settings.py`:
-
-```python
-LLM_PROVIDER = "vertex"  # or "gemini"
-
-MODEL_MAPPING = {
-    "vertex": {
-        "claude-opus": "claude-opus-4-5@20251101",
-        "claude-sonnet": "claude-sonnet-4-5-v2@20250514",
-    },
-    "gemini": {
-        "gemini-3-pro": "gemini-3-pro-preview",
-    }
-}
-```
-
-All agents use `claude-opus` by default (configured in `agent_config.py`).
+Multiple LLM providers supported via `src/config/settings.py`. Set `LLM_PROVIDER` env var to `vertex` (Claude) or `gemini`. Model mappings and defaults configured in `src/config/agent_config.py`.
 
 ### State Schema
 
-`AgentState` in `src/state/schema.py`:
-- `categories` - Selected app categories to research
-- `mode` - "general" or "targeted"
-- `research_plan` - List of SubQuery to execute
-- `discovered_apps` - List of AppOpportunity found (with sources) — uses `add_apps` reducer to deduplicate
-- `scratchpad` - Tracks executed queries, findings, gaps, iteration count — uses `merge_scratchpad` reducer
-- `current_phase` - ResearchPhase enum (PLANNING, DISCOVERY, DEEP_RESEARCH, etc.)
-- `discovery_messages` / `deep_research_messages` - Phase-specific message histories
-- `is_research_sufficient` - Reflection output
-- `cross_app_patterns` - Extracted patterns
-- `output_to_user` - Final markdown report
-- `json_output` - Structured JSON output
-- `errors` - Error accumulator using `add` reducer
+See `src/state/schema.py` for full details. Key points:
+- `AgentState` is the main TypedDict with custom reducers for `discovered_apps` (deduplication) and `scratchpad` (merge)
+- Phase-specific message histories (`discovery_messages`, `deep_research_messages`) support independent tool loops
+- `errors` uses the `add` reducer to accumulate without overwriting
 
 ### Tools
 
-Tools are in `src/agents/tools.py` with lazy Tavily client initialization:
+Tools are in `src/agents/tools.py` with lazy Tavily client initialization.
 
-**Search Tools:**
-- `web_search` - General web search via Tavily
-- `app_store_search` - App Store focused search (includes appfigures, sensortower)
-- `product_hunt_search` - Product Hunt focused search
-- `estimate_app_revenue` - Revenue/download estimates from multiple sources
-- `social_buzz_search` - TikTok, Reddit, Twitter mentions
+**Search Tools:** `web_search`, `app_store_search`, `product_hunt_search`, `estimate_app_revenue`, `social_buzz_search`
 
-**Output Tools (for structured data extraction):**
-- `submit_discovered_apps` - Discovery agent calls this when done, passes list of apps
-- `submit_app_research` - Deep research agent calls this when done, passes research data
-
-Output tools use Pydantic schemas (`DiscoveredApp`, `AppResearch`) to enforce structure.
+**Output Tools:** `submit_discovered_apps`, `submit_app_research` - force structured output via Pydantic schemas (`DiscoveredApp`, `AppResearch`). These tools don't "do" anything except ensure the LLM returns typed data.
 
 ### Output
 
@@ -240,8 +188,10 @@ After running, manually label apps in `scorers/gold_standard.json`.
 1. **Source URLs Required** - Discovery and deep research agents must provide source URLs for each app
 2. **Explicit No-Hallucination Rules** - Prompts explicitly state: "Do NOT invent or hallucinate app names"
 3. **Unknown Over Guessing** - Agents say "unknown" for missing data rather than fabricating
-4. **Fallback Extraction** - `extract_apps_from_messages()` extracts app names directly from tool results with URLs
+4. **Tool-Based Output** - Agents submit findings via tool calls with typed schemas, eliminating JSON parsing failures that caused previous hallucination-like bugs
 5. **Synthesis Grounding** - Synthesis agent only includes apps from the research data
+
+**Deprecated:** `extract_apps_from_messages()` fallback - this extracted article titles as app names and caused major issues. Now we rely on tool-based output instead.
 
 ## Adding a New Agent
 
@@ -263,19 +213,6 @@ After running, manually label apps in `scorers/gold_standard.json`.
 - **Phase-Specific Messages** - The workflow uses `discovery_messages` and `deep_research_messages` instead of a shared `messages` list to support independent tool loops
 - **Tool Node Wrappers** - Custom wrapper functions in `graph.py` map phase-specific messages to/from standard ToolNode
 
-## Debugging
-
-```bash
-# Run with debug flag for verbose logging
-uv run python src/main.py --debug
-
-# Logs show:
-# - [phase] messages for each workflow phase
-# - Tool calls and results
-# - App extraction counts
-# - Reflection decisions
-```
-
 ## Additional Agents (Not in Main Workflow)
 
 `TrendResearchAgent` and `UserCommunicatorAgent` exist in `src/agents/` but are not wired into the main LangGraph workflow. They may be used for alternative workflows or future features.
@@ -286,59 +223,40 @@ uv run python src/main.py --debug
 - Braintrust logging may not capture all traces
 - LLMs may still occasionally synthesize patterns without grounding in specific apps
 - Reflection loop may not trigger if iteration_count isn't properly tracked
-
-## Recent Changes
-
-- **Model Switch**: Gemini → Claude Opus 4.5 via Vertex AI
-- **Categories**: Updated to 10 indie-focused categories
-- **Evaluation**: Added gold standard schema, usefulness scorer, evaluation runner
-- **Docs**: Added `docs/candidate_categories.md` for future category options
-- **Structured Output Refactor**: Switched from JSON text parsing to tool-based output
+- No retry logic for API rate limits
+- App deduplication uses basic name matching (could use fuzzy matching)
+- Search provider tied to Tavily; no fallback when credits run out
 
 ## Design Decisions & Lessons Learned
 
-### Why Tool-Based Structured Output?
+### Tool-Based Structured Output
 
-**Problem:** When agents output JSON as text, we had to parse it. This parsing failed silently with Claude (worked fine with Gemini), causing a cascade of bugs:
-1. `parse_apps_from_response()` returned 0 apps
-2. Fallback `extract_apps_from_messages()` ran
-3. Fallback extracted article TITLES as app names (e.g., "Best AI Tools 2026")
-4. Deep research then searched for these fake "apps" and found Grammarly articles
-5. Final output: 15 entries all containing Grammarly data with garbage names
+**Problem:** JSON text parsing failed silently with Claude, causing cascading bugs where article titles became "app names."
 
-**Solution:** Use tool calls for structured output. Instead of asking the LLM to write JSON text, we define tools like `submit_discovered_apps(apps: List[DiscoveredApp])`. The LLM calls the tool with structured arguments. The API returns these arguments already parsed - no text parsing needed.
+**Solution:** Use tool calls for structured output. The LLM calls tools like `submit_discovered_apps(apps: List[DiscoveredApp])` and the API returns arguments already parsed.
 
-**Key Insight:** The tool doesn't actually DO anything. It's just a mechanism to force the LLM to output structured data that the API will parse for us.
-
+**Key Insight:** The output tool doesn't do anything - it just forces structured data that the API parses:
 ```python
 @tool
 def submit_discovered_apps(apps: List[DiscoveredApp]) -> str:
-    """Submit your findings."""
-    return "ok"  # We don't use this - we extract args from the tool call
+    return "ok"  # Extract args from tool call, not this return value
 ```
 
-### Why Not Hardcode a Blocklist for Big Companies?
+### No Hardcoded Blocklists
 
-**Considered:** Adding a blocklist like `{"grammarly", "notion", "slack", ...}` to filter out big company apps.
-
-**Decision:** Don't do it. The agent should understand "find indie apps" means "not Grammarly". The goal is to build an agent that reasons well, not one with hardcoded rules. The Grammarly bug was a pipeline failure (JSON parsing), not a reasoning failure.
+The agent should reason about "indie apps" vs "big companies" - don't hardcode blocklists. The Grammarly bug was a pipeline failure, not a reasoning failure.
 
 ### Provider Portability
 
-**Goal:** Support multiple LLM providers (Claude, GPT, Gemini) without code changes.
-
-**Approach:**
 - Use LangChain abstractions (`bind_tools`, tool calling)
-- Tool definitions are provider-agnostic (same Pydantic schemas work everywhere)
-- Only the LLM client instantiation changes per provider
-- Future: Let users paste API key and pick provider in config
+- Tool definitions are provider-agnostic (Pydantic schemas work everywhere)
+- Only LLM client instantiation changes per provider
 
-### Logging Philosophy
+### Logging
 
-- `propagate=False` on custom loggers to prevent duplicate output
-- LLM provider banner shows once at startup, not per-agent
-- Verbose debug info (response attrs, raw content) removed - use `--debug` flag if needed
-- Warnings for JSON extraction failures to aid debugging
+- `propagate=False` on custom loggers to prevent duplicates
+- LLM banner shows once at startup
+- Use `--debug` flag for verbose output
 
 ## Approaches Tried & Rejected
 
@@ -348,18 +266,3 @@ def submit_discovered_apps(apps: List[DiscoveredApp]) -> str:
 | Hardcode big company blocklist | Agent should reason about indie vs big company |
 | `extract_apps_from_messages` fallback | Extracted article titles, not actual apps |
 | Multiple JSON extraction strategies | Added complexity, still failed |
-
-## What's Working Well
-
-- Tool-based structured output (provider-agnostic, reliable)
-- LangGraph state machine with phase-specific message histories
-- Lazy initialization of agents and API clients
-- Gold standard evaluation framework for regression testing
-- Usefulness scorer with 5-dimension rubric
-
-## Known Gaps to Address
-
-1. **Reflection loop** - Detects problems but doesn't effectively retry with better queries
-2. **App deduplication** - Basic name matching, could use fuzzy matching
-3. **Rate limiting** - No retry logic for API failures
-4. **Search provider** - Tied to Tavily, need fallback (DuckDuckGo) when credits run out
