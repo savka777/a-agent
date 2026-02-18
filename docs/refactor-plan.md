@@ -59,26 +59,19 @@
 │                          MCP LAYER                                  │
 │                                                                     │
 │  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐  │
-│  │   AppInsightMCP  │  │   Revenue MCP    │  │  Product Hunt    │  │
-│  │                  │  │                  │  │      MCP         │  │
-│  │ iOS + Android:   │  │ • Revenue est.   │  │                  │  │
-│  │ • search         │  │ • Downloads      │  │ • get_posts      │  │
-│  │ • details        │  │ • Monetization   │  │ • get_post_details│ │
-│  │ • reviews        │  │ • Competitors    │  │ • get_collections│  │
-│  │ • ratings        │  │                  │  │ • filter by topic│  │
-│  │ • similar        │  │                  │  │ • filter by date │  │
-│  │ • developer      │  │                  │  │                  │  │
-│  │ • privacy        │  │                  │  │                  │  │
+│  │  App Store       │  │  Product Hunt    │  │  Tavily          │  │
+│  │  Scraper ✅      │  │  MCP ✅          │  │  (Web Search)    │  │
+│  │                  │  │                  │  │                  │  │
+│  │ iOS + Android:   │  │ • get_posts      │  │ • General search │  │
+│  │ • search_app     │  │ • get_post_details│ │ • Revenue search │  │
+│  │ • get_app_details│  │ • get_collections│  │   (MRR, revenue) │  │
+│  │ • analyze_reviews│  │ • search_topics  │  │ • Social buzz    │  │
+│  │ • get_similar    │  │ • filter by topic│  │   (Twitter, etc) │  │
+│  │ • get_developer  │  │                  │  │ • News articles  │  │
+│  │ • get_pricing    │  │                  │  │                  │  │
+│  │ • ASO keywords   │  │                  │  │                  │  │
 │  └──────────────────┘  └──────────────────┘  └──────────────────┘  │
 │                                                                     │
-│  ┌──────────────────┐  ┌──────────────────┐                        │
-│  │     ASO MCP      │  │  Tavily/Exa      │                        │
-│  │                  │  │  (Web Search)    │                        │
-│  │ • Keywords       │  │                  │                        │
-│  │ • Review insight │  │ • General search │                        │
-│  │ • Rankings       │  │ • Social buzz    │                        │
-│  │                  │  │ • News articles  │                        │
-│  └──────────────────┘  └──────────────────┘                        │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -706,9 +699,28 @@ GOOGLE_APPLICATION_CREDENTIALS=/path/to/creds.json
 |-----|---------|--------------|--------|
 | **App Store Scraper** | `git clone https://github.com/appreply-co/mcp-appstore.git && npm install` | None | ✅ **VALIDATED** - See `docs/mcp/app-store-scraper.md` |
 | **Product Hunt** | `uv pip install product-hunt-mcp` | `PRODUCT_HUNT_TOKEN` | ✅ **VALIDATED** - See `docs/mcp/product-hunt.md` |
-| Revenue MCP | Smithery hosted | May require API key | ⏳ Not tested |
+| Revenue MCP | N/A | N/A | ⏳ **SKIPPED** - See note below |
 
 > **Note**: AppInsightMCP (`@jeromyfu/app-insight-mcp`) was replaced with App Store Scraper from AppReply.co which provides more comprehensive coverage (17 tools including ASO features).
+
+### Revenue Data Strategy
+
+Revenue data is not publicly available - services like Sensor Tower ($25k+/year) use panel data and statistical modeling to estimate it.
+
+**Our approach:** Use Tavily web search to find publicly shared revenue:
+```python
+# Example search queries for revenue discovery
+web_search(f'"{app_name}" MRR site:twitter.com OR site:indiehackers.com')
+web_search(f'"{app_name}" revenue monthly')
+web_search(f'"{founder_name}" "{app_name}" making money')
+```
+
+**Revenue proxies from validated MCPs:**
+| Signal | Tool | MCP |
+|--------|------|-----|
+| Monetization model | `get_pricing_details` | App Store Scraper |
+| Popularity | Rating/review counts | App Store Scraper |
+| Traction | Votes, comments | Product Hunt |
 
 ---
 

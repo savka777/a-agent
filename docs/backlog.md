@@ -12,7 +12,21 @@ See `docs/refactor-plan.md` for the full plan.
 |-----|--------|---------------|
 | App Store Scraper (appreply-co/mcp-appstore) | ✅ Validated | `docs/mcp/app-store-scraper.md` |
 | Product Hunt MCP (product-hunt-mcp) | ✅ Validated | `docs/mcp/product-hunt.md` |
-| Revenue MCP | ⏳ Not started | - |
+| Revenue MCP | ⏳ **Skipped** | See note below |
+
+#### Revenue Data Strategy
+
+**Decision:** Skip dedicated Revenue MCP - requires expensive enterprise APIs ($25k+/year for Sensor Tower, data.ai, etc.)
+
+**Alternative:** Use Tavily web search to find publicly shared revenue:
+- Many indie makers share MRR on Twitter, Indie Hackers, blog posts
+- Search queries: `"[App name] MRR"`, `"[App name] revenue"`, `"[Founder] making $X"`
+- Already have `TAVILY_API_KEY` configured in project
+
+**Revenue proxies from existing MCPs:**
+- `get_pricing_details` → monetization model (free/freemium/subscription/IAP)
+- `get_app_details` → ratings count, review count as popularity proxy
+- Product Hunt votes/comments → traction signals
 
 ### Why
 - Current pipeline is too rigid (linear flow)
@@ -60,3 +74,28 @@ These were relevant to the old 6-agent pipeline:
 - [ ] Multi-provider support (let users pick LLM provider)
 - [ ] Context compaction (/compact command)
 - [ ] Export to multiple formats (md, json, pdf)
+
+---
+
+## Final Steps (Before Open Source Release)
+
+### README Creation Checklist
+
+- [ ] Create comprehensive README.md with:
+  - [ ] Project overview and features
+  - [ ] Quick start guide
+  - [ ] **MCP setup instructions** (run `scripts/setup_mcps.sh`)
+  - [ ] Environment variables (see `.env.example`)
+  - [ ] Required API tokens:
+    - `PRODUCT_HUNT_TOKEN` - from https://www.producthunt.com/v2/oauth/applications
+    - `TAVILY_API_KEY` - for web search fallback
+    - Vertex AI / Gemini credentials for LLM
+  - [ ] Usage examples
+  - [ ] Architecture overview (link to `docs/refactor-plan.md`)
+  - [ ] Contributing guidelines
+  - [ ] License
+
+### Notes for README
+- `mcp-servers/` is gitignored - users must run setup script
+- MCP documentation lives in `docs/mcp/`
+- Each MCP has its own setup requirements (Node.js for App Store, Python for Product Hunt)
