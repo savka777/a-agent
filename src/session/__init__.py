@@ -1,0 +1,1 @@
+# Session management - state persistence

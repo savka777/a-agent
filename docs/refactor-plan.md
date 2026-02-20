@@ -82,36 +82,31 @@
 **Owner**: Backend Agent
 **Priority**: FIRST - everything depends on this
 
-### 0.1 MCP Client Setup
-- [ ] Research MCP client options for Python
-  - Option A: Use `mcp` Python SDK
-  - Option B: Shell out to npx commands
-  - Option C: Direct HTTP to MCP server endpoints
+### 0.1 MCP Client Setup ✅ VALIDATED
+- [x] Research MCP client options for Python → Using `mcp` Python SDK
 - [ ] Create `src/mcp/__init__.py`
 - [ ] Create `src/mcp/client.py` - MCP connection manager
   - [ ] `MCPClient` class with connection pooling
   - [ ] `call_tool(server, tool_name, params)` method
   - [ ] Error handling and retries
-  - [ ] Timeout configuration
+  - [ ] Timeout configuration (60s default)
 
-### 0.2 MCP Server Configuration
+### 0.2 MCP Server Configuration ✅ VALIDATED
 - [ ] Create `src/mcp/config.py` - server definitions
   ```python
   MCP_SERVERS = {
-      "appinsight": {
-          "command": "npx",
-          "args": ["-y", "@jeromyfu/app-insight-mcp"],
+      "app_store": {
+          "command": "node",
+          "args": ["mcp-servers/mcp-appstore/server.js"],
+          "cwd": "mcp-servers/mcp-appstore",
           "env": {}
       },
-      "producthunt": {
-          "command": "uvx",
-          "args": ["product-hunt-mcp"],
+      "product_hunt": {
+          "command": ".venv/bin/product-hunt-mcp",
           "env": {"PRODUCT_HUNT_TOKEN": "${PRODUCT_HUNT_TOKEN}"}
-      },
-      "revenue": {
-          "url": "https://server.smithery.ai/@kemalersin/app-revenue-mcp/mcp"
       }
   }
+  # Note: Revenue data via Tavily web search, not dedicated MCP
   ```
 - [ ] Create `.env.example` with required tokens
   ```
@@ -147,11 +142,11 @@
   ```
 - [ ] Create `src/tools/revenue.py`
   ```python
-  async def estimate_revenue(app_id: str) -> RevenueEstimate:
-      """Get revenue/download estimates."""
+  async def search_revenue(app_name: str, founder_name: Optional[str] = None) -> RevenueSearchResult:
+      """Search Tavily for publicly shared revenue data (MRR, revenue posts)."""
 
-  async def compare_revenue(app_ids: List[str]) -> RevenueComparison:
-      """Compare revenue across apps."""
+  async def get_revenue_proxies(app_id: str, platform: str) -> RevenueProxies:
+      """Get indirect revenue signals: pricing model, ratings count, review count."""
   ```
 - [ ] Create `src/tools/product_hunt.py`
   ```python
@@ -422,6 +417,54 @@
   - [ ] Error isolation (one worker crash doesn't kill others)
   - [ ] Result collection and aggregation
 
+### 4.3 Worker Configuration (REQUIRED)
+
+```python
+# src/workflow/dispatch.py
+WORKER_CONFIG = {
+    "max_concurrent": 5,        # Max parallel workers
+    "timeout_seconds": 60,      # Per-worker timeout
+    "max_retries": 2,           # Retries per failed task
+    "retry_strategy": "different_approach",  # Try alternate search terms
+    "failure_mode": "continue", # Don't abort other workers on failure
+    "result_aggregation": "wait_all",  # Wait for all workers before proceeding
+}
+```
+
+**Timeout enforcement:** Use `asyncio.wait_for()` or LangGraph's built-in timeout.
+**Failure handling:** Failed workers return `ResearchResult` with `exists=False` and `gaps=["reason"]`.
+**Result aggregation:** Collect all results, then pass to supervisor for evaluation.
+
+### 4.4 Event System Specification (REQUIRED)
+
+Events emitted by workflow for UI updates:
+
+```python
+# src/workflow/events.py
+class WorkflowEvent(Enum):
+    # Planning phase
+    INTENT_PARSED = "intent_parsed"      # {intent: str, confidence: float}
+    PLAN_CREATED = "plan_created"        # {tasks: List[ResearchTask]}
+    PLAN_APPROVED = "plan_approved"      # {}
+    PLAN_REFINED = "plan_refined"        # {feedback: str}
+
+    # Execution phase
+    WORKER_STARTED = "worker_started"    # {worker_id: str, task: ResearchTask}
+    WORKER_PROGRESS = "worker_progress"  # {worker_id: str, status: str}
+    WORKER_COMPLETED = "worker_completed"  # {worker_id: str, result: ResearchResult}
+    WORKER_FAILED = "worker_failed"      # {worker_id: str, error: str}
+
+    # Synthesis phase
+    SYNTHESIS_STARTED = "synthesis_started"  # {}
+    SYNTHESIS_COMPLETE = "synthesis_complete"  # {summary: str}
+
+    # Session
+    REPORT_SAVED = "report_saved"        # {path: str, format: str}
+```
+
+**Event delivery:** Use Python `asyncio.Queue` or callback pattern.
+**UI subscription:** `workflow.on(WorkflowEvent.WORKER_STARTED, callback)`.
+
 ---
 
 ## Phase 5: CLI Interface (UI/UX)
@@ -632,31 +675,68 @@ src/
 
 ---
 
-## Implementation Order
+## Implementation Order: 3 Chunks with Checkpoints
 
-### Sprint 1: Foundation (Backend)
-1. Phase 0: MCP infrastructure
-2. Phase 1: State schemas
-3. Basic tool wrappers (app_store.py first)
+> **Execution mode:** YOLO mode with reflection checkpoints after each chunk.
+> **Code review:** Run `code-reviewer` agent after each chunk before proceeding.
 
-### Sprint 2: Core Agents (Backend)
-1. Phase 2: Supervisor agent
-2. Phase 3: Researcher worker
-3. Phase 4: Workflow graph (basic flow)
+### Chunk A: Foundation (Phases 0-2)
+**Owner:** Main orchestration agent
+**Scope:** MCP client, state schemas, tool wrappers
 
-### Sprint 3: UI Foundation (UI/UX)
-1. Phase 5.1-5.2: Design system, main app
-2. Phase 5.3: Core components (input, progress)
+| Task | Files | Acceptance Criteria |
+|------|-------|---------------------|
+| MCP Client | `src/mcp/client.py`, `src/mcp/config.py` | Can call both MCPs |
+| State Schema | `src/state/supervisor_state.py`, `src/state/schemas.py` | All TypedDicts compile |
+| Tool Wrappers | `src/tools/app_store.py`, `src/tools/product_hunt.py`, `src/tools/web_search.py` | Can search apps, get details |
 
-### Sprint 4: Integration
-1. Phase 4: Complete workflow with parallel dispatch
-2. Phase 5.3-5.4: Remaining components, commands
-3. Phase 6: Connect workflow to UI
+**Checkpoint A:** Run test that calls each MCP tool and returns structured data.
+```bash
+uv run python -c "from src.tools.app_store import search_apps; print(search_apps('habit tracker', 'ios'))"
+```
 
-### Sprint 5: Polish
-1. Phase 5.5: Event system
-2. Phase 7: Testing
-3. Phase 8: Cleanup and docs
+---
+
+### Chunk B: Agents + Workflow (Phases 3-4)
+**Owner:** Main orchestration agent
+**Scope:** Supervisor agent, researcher worker, LangGraph workflow, parallel dispatch
+
+| Task | Files | Acceptance Criteria |
+|------|-------|---------------------|
+| Supervisor Agent | `src/agents/supervisor/` | Can parse intent, create plan |
+| Researcher Worker | `src/agents/researcher/` | Can execute one research task |
+| Workflow Graph | `src/workflow/supervisor_graph.py` | End-to-end flow compiles |
+| Parallel Dispatch | `src/workflow/dispatch.py` | Can spawn 3 workers in parallel |
+
+**Checkpoint B:** Run test query that creates plan, dispatches 3 workers, collects results.
+```bash
+uv run python -c "from src.workflow import run_test; run_test('habit tracker apps')"
+```
+
+---
+
+### Chunk C: UI + Integration (Phases 5-6)
+**Owner:** UI/UX agent
+**Scope:** Rich CLI interface, components, commands, event integration
+
+| Task | Files | Acceptance Criteria |
+|------|-------|---------------------|
+| Theme & Design | `src/ui/theme.py` | Colors, styles defined |
+| Main App | `src/ui/app.py` | Can start, show prompt |
+| Components | `src/ui/components/` | Input, progress, results render |
+| Commands | `src/ui/commands.py` | /save, /help work |
+| Integration | `src/main.py` | Workflow events update UI |
+
+**Checkpoint C:** Full end-to-end demo works:
+```
+Ask question → See plan → Approve → Watch workers → See results → /save
+```
+
+---
+
+### Post-Chunk: Testing & Cleanup (Phases 7-8)
+**Owner:** Both agents
+**Scope:** Integration tests, archive old code, update docs
 
 ---
 
